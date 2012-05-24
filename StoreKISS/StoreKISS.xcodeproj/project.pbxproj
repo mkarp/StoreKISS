@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
+		04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
+		04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */; };
+		04DAE5A5156E758A00B5AFC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04DAE5A3156E758A00B5AFC6 /* InfoPlist.strings */; };
+		04DAE5A7156E758A00B5AFC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5A6156E758A00B5AFC6 /* main.m */; };
+		04DAE5AB156E758A00B5AFC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5AA156E758A00B5AFC6 /* AppDelegate.m */; };
+		04DAE5B3156E758A00B5AFC6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */; };
+		04DAE5B4156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
+		04DAE5B5156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
+		04DAE5BD156E758B00B5AFC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04DAE5BB156E758B00B5AFC6 /* InfoPlist.strings */; };
+		04DAE5C0156E758B00B5AFC6 /* StoreKISSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5BF156E758B00B5AFC6 /* StoreKISSTests.m */; };
+		04DAE5CC156E75CE00B5AFC6 /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
+		04DAE5CD156E75CE00B5AFC6 /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04DAE5B6156E758A00B5AFC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04DAE58D156E758A00B5AFC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04DAE595156E758A00B5AFC6;
+			remoteInfo = StoreKISS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04DAE596156E758A00B5AFC6 /* StoreKISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreKISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DAE59A156E758A00B5AFC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		04DAE59C156E758A00B5AFC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		04DAE5A2156E758A00B5AFC6 /* StoreKISS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreKISS-Info.plist"; sourceTree = "<group>"; };
+		04DAE5A4156E758A00B5AFC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04DAE5A6156E758A00B5AFC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		04DAE5A8156E758A00B5AFC6 /* StoreKISS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreKISS-Prefix.pch"; sourceTree = "<group>"; };
+		04DAE5A9156E758A00B5AFC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		04DAE5AA156E758A00B5AFC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		04DAE5B1156E758A00B5AFC6 /* StoreKISSTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreKISSTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		04DAE5BA156E758B00B5AFC6 /* StoreKISSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreKISSTests-Info.plist"; sourceTree = "<group>"; };
+		04DAE5BC156E758B00B5AFC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04DAE5BE156E758B00B5AFC6 /* StoreKISSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreKISSTests.h; sourceTree = "<group>"; };
+		04DAE5BF156E758B00B5AFC6 /* StoreKISSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreKISSTests.m; sourceTree = "<group>"; };
+		04DAE5CA156E75CE00B5AFC6 /* StoreKISS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISS.h; sourceTree = "<group>"; };
+		04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISS.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		04DAE593156E758A00B5AFC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */,
+				04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */,
+				04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DAE5AD156E758A00B5AFC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DAE5B3156E758A00B5AFC6 /* SenTestingKit.framework in Frameworks */,
+				04DAE5B4156E758A00B5AFC6 /* UIKit.framework in Frameworks */,
+				04DAE5B5156E758A00B5AFC6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04DAE58B156E758A00B5AFC6 = {
+			isa = PBXGroup;
+			children = (
+				04DAE5A0156E758A00B5AFC6 /* StoreKISS */,
+				04DAE5B8156E758A00B5AFC6 /* StoreKISSTests */,
+				04DAE599156E758A00B5AFC6 /* Frameworks */,
+				04DAE597156E758A00B5AFC6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		04DAE597156E758A00B5AFC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				04DAE596156E758A00B5AFC6 /* StoreKISS.app */,
+				04DAE5B1156E758A00B5AFC6 /* StoreKISSTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		04DAE599156E758A00B5AFC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04DAE59A156E758A00B5AFC6 /* UIKit.framework */,
+				04DAE59C156E758A00B5AFC6 /* Foundation.framework */,
+				04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */,
+				04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04DAE5A0156E758A00B5AFC6 /* StoreKISS */ = {
+			isa = PBXGroup;
+			children = (
+				04DAE5C9156E75CE00B5AFC6 /* StoreKISS */,
+				04DAE5A9156E758A00B5AFC6 /* AppDelegate.h */,
+				04DAE5AA156E758A00B5AFC6 /* AppDelegate.m */,
+				04DAE5A1156E758A00B5AFC6 /* Supporting Files */,
+			);
+			path = StoreKISS;
+			sourceTree = "<group>";
+		};
+		04DAE5A1156E758A00B5AFC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04DAE5A2156E758A00B5AFC6 /* StoreKISS-Info.plist */,
+				04DAE5A3156E758A00B5AFC6 /* InfoPlist.strings */,
+				04DAE5A6156E758A00B5AFC6 /* main.m */,
+				04DAE5A8156E758A00B5AFC6 /* StoreKISS-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04DAE5B8156E758A00B5AFC6 /* StoreKISSTests */ = {
+			isa = PBXGroup;
+			children = (
+				04DAE5BE156E758B00B5AFC6 /* StoreKISSTests.h */,
+				04DAE5BF156E758B00B5AFC6 /* StoreKISSTests.m */,
+				04DAE5B9156E758B00B5AFC6 /* Supporting Files */,
+			);
+			path = StoreKISSTests;
+			sourceTree = "<group>";
+		};
+		04DAE5B9156E758B00B5AFC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				04DAE5BA156E758B00B5AFC6 /* StoreKISSTests-Info.plist */,
+				04DAE5BB156E758B00B5AFC6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		04DAE5C9156E75CE00B5AFC6 /* StoreKISS */ = {
+			isa = PBXGroup;
+			children = (
+				04DAE5CA156E75CE00B5AFC6 /* StoreKISS.h */,
+				04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */,
+			);
+			path = StoreKISS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		04DAE595156E758A00B5AFC6 /* StoreKISS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DAE5C3156E758B00B5AFC6 /* Build configuration list for PBXNativeTarget "StoreKISS" */;
+			buildPhases = (
+				04DAE592156E758A00B5AFC6 /* Sources */,
+				04DAE593156E758A00B5AFC6 /* Frameworks */,
+				04DAE594156E758A00B5AFC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StoreKISS;
+			productName = StoreKISS;
+			productReference = 04DAE596156E758A00B5AFC6 /* StoreKISS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		04DAE5B0156E758A00B5AFC6 /* StoreKISSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04DAE5C6156E758B00B5AFC6 /* Build configuration list for PBXNativeTarget "StoreKISSTests" */;
+			buildPhases = (
+				04DAE5AC156E758A00B5AFC6 /* Sources */,
+				04DAE5AD156E758A00B5AFC6 /* Frameworks */,
+				04DAE5AE156E758A00B5AFC6 /* Resources */,
+				04DAE5AF156E758A00B5AFC6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04DAE5B7156E758A00B5AFC6 /* PBXTargetDependency */,
+			);
+			name = StoreKISSTests;
+			productName = StoreKISSTests;
+			productReference = 04DAE5B1156E758A00B5AFC6 /* StoreKISSTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04DAE58D156E758A00B5AFC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 04DAE590156E758A00B5AFC6 /* Build configuration list for PBXProject "StoreKISS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 04DAE58B156E758A00B5AFC6;
+			productRefGroup = 04DAE597156E758A00B5AFC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				04DAE595156E758A00B5AFC6 /* StoreKISS */,
+				04DAE5B0156E758A00B5AFC6 /* StoreKISSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		04DAE594156E758A00B5AFC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DAE5A5156E758A00B5AFC6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DAE5AE156E758A00B5AFC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DAE5BD156E758B00B5AFC6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04DAE5AF156E758A00B5AFC6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		04DAE592156E758A00B5AFC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DAE5A7156E758A00B5AFC6 /* main.m in Sources */,
+				04DAE5AB156E758A00B5AFC6 /* AppDelegate.m in Sources */,
+				04DAE5CC156E75CE00B5AFC6 /* StoreKISS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04DAE5AC156E758A00B5AFC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04DAE5C0156E758B00B5AFC6 /* StoreKISSTests.m in Sources */,
+				04DAE5CD156E75CE00B5AFC6 /* StoreKISS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04DAE5B7156E758A00B5AFC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04DAE595156E758A00B5AFC6 /* StoreKISS */;
+			targetProxy = 04DAE5B6156E758A00B5AFC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		04DAE5A3156E758A00B5AFC6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04DAE5A4156E758A00B5AFC6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		04DAE5BB156E758B00B5AFC6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04DAE5BC156E758B00B5AFC6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		04DAE5C1156E758B00B5AFC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		04DAE5C2156E758B00B5AFC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		04DAE5C4156E758B00B5AFC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoreKISS/StoreKISS-Prefix.pch";
+				INFOPLIST_FILE = "StoreKISS/StoreKISS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		04DAE5C5156E758B00B5AFC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoreKISS/StoreKISS-Prefix.pch";
+				INFOPLIST_FILE = "StoreKISS/StoreKISS-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		04DAE5C7156E758B00B5AFC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StoreKISS.app/StoreKISS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoreKISS/StoreKISS-Prefix.pch";
+				INFOPLIST_FILE = "StoreKISSTests/StoreKISSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		04DAE5C8156E758B00B5AFC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StoreKISS.app/StoreKISS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StoreKISS/StoreKISS-Prefix.pch";
+				INFOPLIST_FILE = "StoreKISSTests/StoreKISSTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04DAE590156E758A00B5AFC6 /* Build configuration list for PBXProject "StoreKISS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DAE5C1156E758B00B5AFC6 /* Debug */,
+				04DAE5C2156E758B00B5AFC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04DAE5C3156E758B00B5AFC6 /* Build configuration list for PBXNativeTarget "StoreKISS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DAE5C4156E758B00B5AFC6 /* Debug */,
+				04DAE5C5156E758B00B5AFC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		04DAE5C6156E758B00B5AFC6 /* Build configuration list for PBXNativeTarget "StoreKISSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04DAE5C7156E758B00B5AFC6 /* Debug */,
+				04DAE5C8156E758B00B5AFC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04DAE58D156E758A00B5AFC6 /* Project object */;
+}
