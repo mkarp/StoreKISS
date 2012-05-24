@@ -10,8 +10,21 @@
 #import <StoreKit/StoreKit.h>
 
 /**
- >> `StoreKISS` (KISS is for Keep It Simple, Stupid) should simplify your work with StoreKit.
- >> *Captain Obvious*
+ Drafting with documentation and idead here.
+ 
+ Docs and readme will be built with make and appledoc.
+
+ Cover everything with tests.
+
+ Lightweight wrapper for Apple's StoreKit framework created with "Keep It Simple, Stupid" concept and love ❤.
+ 
+ StoreKISS.h should be an inclide file for all project files.
+ 
+ As a library user I want to:
+ 
+ - make requests for product data by product ids from Apple with success/failure block - StoreKISSDataRequest;
+ - make purchases by product ids/SKProduct with success/failure block;
+ - make these receiving notifications.
 
  Uses ARC.
  
@@ -25,7 +38,10 @@
 
  **Product ID** is a unique In-App Purchase product identifier of the item being purchased. It is usually stored locally in your application or at your server and should be assigned to a concrete In-App Purchase item at the iTunesConnect portal (https://itunesconnect.apple.com).
  */
-@interface StoreKISS : NSObject
+ 
+extern NSString * const StoreKISSErrorDomain;
+
+@interface StoreKISS : NSObject<SKPaymentTransactionObserver>
 
 ///----------------------
 /// @name General methods

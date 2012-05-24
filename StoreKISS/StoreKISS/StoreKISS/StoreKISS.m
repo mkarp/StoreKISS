@@ -8,9 +8,7 @@
 
 #import "StoreKISS.h"
 
-@interface StoreKISS ()
-
-@end
+NSString * const StoreKISSErrorDomain = @"storekiss.error";
 
 @implementation StoreKISS
 
@@ -18,7 +16,7 @@
 {
 	self = [super init];
 	if (self) {
-		
+		[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
 	}
 	return self;
 }

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04702C90156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */; };
+		04702C91156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */; };
+		04702C94156E7D9D00EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
+		04702C95156E7E0300EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
+		04702C98156E7E4700EA9D2B /* StoreKISSDataRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C97156E7E4700EA9D2B /* StoreKISSDataRequestTests.m */; };
 		04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
 		04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
 		04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */; };
@@ -33,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04702C8E156E7B0D00EA9D2B /* StoreKISSDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequest.h; sourceTree = "<group>"; };
+		04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequest.m; sourceTree = "<group>"; };
+		04702C93156E7D9D00EA9D2B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		04702C96156E7E4700EA9D2B /* StoreKISSDataRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequestTests.h; sourceTree = "<group>"; };
+		04702C97156E7E4700EA9D2B /* StoreKISSDataRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequestTests.m; sourceTree = "<group>"; };
 		04DAE596156E758A00B5AFC6 /* StoreKISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreKISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAE59A156E758A00B5AFC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		04DAE59C156E758A00B5AFC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04702C94156E7D9D00EA9D2B /* StoreKit.framework in Frameworks */,
 				04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */,
 				04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */,
 				04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */,
@@ -68,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04702C95156E7E0300EA9D2B /* StoreKit.framework in Frameworks */,
 				04DAE5B3156E758A00B5AFC6 /* SenTestingKit.framework in Frameworks */,
 				04DAE5B4156E758A00B5AFC6 /* UIKit.framework in Frameworks */,
 				04DAE5B5156E758A00B5AFC6 /* Foundation.framework in Frameworks */,
@@ -100,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				04DAE59A156E758A00B5AFC6 /* UIKit.framework */,
+				04702C93156E7D9D00EA9D2B /* StoreKit.framework */,
 				04DAE59C156E758A00B5AFC6 /* Foundation.framework */,
 				04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */,
 				04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */,
@@ -134,6 +147,8 @@
 			children = (
 				04DAE5BE156E758B00B5AFC6 /* StoreKISSTests.h */,
 				04DAE5BF156E758B00B5AFC6 /* StoreKISSTests.m */,
+				04702C96156E7E4700EA9D2B /* StoreKISSDataRequestTests.h */,
+				04702C97156E7E4700EA9D2B /* StoreKISSDataRequestTests.m */,
 				04DAE5B9156E758B00B5AFC6 /* Supporting Files */,
 			);
 			path = StoreKISSTests;
@@ -153,6 +168,8 @@
 			children = (
 				04DAE5CA156E75CE00B5AFC6 /* StoreKISS.h */,
 				04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */,
+				04702C8E156E7B0D00EA9D2B /* StoreKISSDataRequest.h */,
+				04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */,
 			);
 			path = StoreKISS;
 			sourceTree = "<group>";
@@ -265,6 +282,7 @@
 				04DAE5A7156E758A00B5AFC6 /* main.m in Sources */,
 				04DAE5AB156E758A00B5AFC6 /* AppDelegate.m in Sources */,
 				04DAE5CC156E75CE00B5AFC6 /* StoreKISS.m in Sources */,
+				04702C90156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +292,8 @@
 			files = (
 				04DAE5C0156E758B00B5AFC6 /* StoreKISSTests.m in Sources */,
 				04DAE5CD156E75CE00B5AFC6 /* StoreKISS.m in Sources */,
+				04702C91156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */,
+				04702C98156E7E4700EA9D2B /* StoreKISSDataRequestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +449,7 @@
 				04DAE5C5156E758B00B5AFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		04DAE5C6156E758B00B5AFC6 /* Build configuration list for PBXNativeTarget "StoreKISSTests" */ = {
 			isa = XCConfigurationList;
@@ -437,6 +458,7 @@
 				04DAE5C8156E758B00B5AFC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
