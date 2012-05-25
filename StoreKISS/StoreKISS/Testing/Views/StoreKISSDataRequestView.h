@@ -13,6 +13,7 @@
 @property (strong, nonatomic) UIButton *launchSingleButton;
 @property (strong, nonatomic) UIButton *launchBulkButton;
 @property (strong, nonatomic) UILabel *statusLabel;
+@property (strong, nonatomic) UILabel *notificationStatusLabel;
 @property (strong, nonatomic) UITextView *logTextView;
 
 @end

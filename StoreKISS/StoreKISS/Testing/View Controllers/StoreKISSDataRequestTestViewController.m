@@ -16,24 +16,63 @@ NSString * const statusNA = @"N/A";
 NSString * const statusSuccess = @"Success";
 NSString * const statusExecuting = @"Executing";
 NSString * const statusFailure = @"Failure";
+NSString * const notificationStatusNA = @"N/A";
+NSString * const notificationStatusSuccess = @"Success";
+NSString * const notificationStatusFailure = @"Failure";
 
 @interface StoreKISSDataRequestTestViewController ()
 
-@property (unsafe_unretained, nonatomic) StoreKISSDataRequestView *storeKISSDataRequestView;
+@property (unsafe_unretained, nonatomic) StoreKISSDataRequestView *requestView;
 @property (strong, nonatomic) StoreKISSDataRequest *request;
 
 @end
 
 @implementation StoreKISSDataRequestTestViewController
 
-@synthesize storeKISSDataRequestView,
+@synthesize requestView,
 request;
+
+- (void)dealloc
+{
+	[[NSNotificationCenter defaultCenter]
+	 removeObserver:self
+	 name:StoreKISSNotificationDataRequestStarted
+	 object:nil];
+	
+	[[NSNotificationCenter defaultCenter]
+	 removeObserver:self
+	 name:StoreKISSNotificationDataRequestSuccess
+	 object:nil];
+	
+	[[NSNotificationCenter defaultCenter]
+	 removeObserver:self
+	 name:StoreKISSNotificationDataRequestFailure
+	 object:nil];
+}
 
 - (id)init
 {
 	self = [super init];
 	if (self) {
 		self.request = [[StoreKISSDataRequest alloc] init];
+		
+		[[NSNotificationCenter defaultCenter]
+		 addObserver:self
+		 selector:@selector(didReceiveDataRequestNotification:)
+		 name:StoreKISSNotificationDataRequestStarted
+		 object:nil];
+		
+		[[NSNotificationCenter defaultCenter]
+		 addObserver:self
+		 selector:@selector(didReceiveDataRequestNotification:)
+		 name:StoreKISSNotificationDataRequestSuccess
+		 object:nil];
+		
+		[[NSNotificationCenter defaultCenter]
+		 addObserver:self
+		 selector:@selector(didReceiveDataRequestNotification:)
+		 name:StoreKISSNotificationDataRequestFailure
+		 object:nil];
 	}
 	return self;
 }
@@ -45,7 +84,7 @@ request;
 	[super loadView];
 	
 	self.view = [[StoreKISSDataRequestView alloc] init];
-	self.storeKISSDataRequestView = (StoreKISSDataRequestView *)self.view;
+	self.requestView = (StoreKISSDataRequestView *)self.view;
 }
 
 - (void)viewDidLoad
@@ -54,26 +93,33 @@ request;
 	
 	self.title = NSLocalizedString(NSStringFromClass([self class]), @"");
 	
-	[self.storeKISSDataRequestView.launchSingleButton
+	[self.requestView.launchSingleButton
 	 addTarget:self
 	 action:@selector(launchButtonOnTouchUpInside:)
 	 forControlEvents:UIControlEventTouchUpInside];
 	
-	[self.storeKISSDataRequestView.launchBulkButton
+	[self.requestView.launchBulkButton
 	 addTarget:self
 	 action:@selector(launchBulkButtonOnTouchUpInside:)
 	 forControlEvents:UIControlEventTouchUpInside];
 	
-	self.storeKISSDataRequestView.statusLabel.text = NSLocalizedString(statusNA, @"");
-	self.storeKISSDataRequestView.statusLabel.textColor = [UIColor blackColor];
+	self.requestView.statusLabel.text = statusNA;
+	self.requestView.statusLabel.textColor = [UIColor blackColor];
+	
+	self.requestView.notificationStatusLabel.text = notificationStatusNA;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+	return YES;
 }
 
 #pragma mark - Events
 
 - (void)launchButtonOnTouchUpInside:(id)sender
 {
-	self.storeKISSDataRequestView.statusLabel.text = NSLocalizedString(statusExecuting, @"");
-	self.storeKISSDataRequestView.statusLabel.textColor = [UIColor blackColor];
+	self.requestView.statusLabel.text = statusExecuting;
+	self.requestView.statusLabel.textColor = [UIColor blackColor];
 	
 	[self log:[NSString stringWithFormat:@"Requesting data for Product ID %@...", nonConsumableProductIdentifier1]];
 	
@@ -81,21 +127,21 @@ request;
 	 requestDataForItemWithProductId:nonConsumableProductIdentifier1
 	 success:^(StoreKISSDataRequest *request,
 			   SKProductsResponse *response) {
-		 NSString *result = NSLocalizedString(statusSuccess, @"");
+		 NSString *result = statusSuccess;
 		 if (response.products.count == 1) {
 			 result = [result stringByAppendingFormat:@" %@",
 					   ((SKProduct *)[response.products objectAtIndex:0]).productIdentifier];
 		 }
 		 
-		 self.storeKISSDataRequestView.statusLabel.text = result;
-		 self.storeKISSDataRequestView.statusLabel.textColor = [UIColor greenColor];
+		 self.requestView.statusLabel.text = result;
+		 self.requestView.statusLabel.textColor = [UIColor greenColor];
 		 
 		 [self log:@"Finished with success"];
 		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
 		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
-		 self.storeKISSDataRequestView.statusLabel.text = NSLocalizedString(statusFailure, @"");
-		 self.storeKISSDataRequestView.statusLabel.textColor = [UIColor redColor];
+		 self.requestView.statusLabel.text = statusFailure;
+		 self.requestView.statusLabel.textColor = [UIColor redColor];
 		 
 		 [self log:@"Finished with error"];
 		 [self log:[NSString stringWithFormat:@"%@", error.localizedDescription]]; 
@@ -104,8 +150,8 @@ request;
 
 - (void)launchBulkButtonOnTouchUpInside:(id)sender
 {
-	self.storeKISSDataRequestView.statusLabel.text = NSLocalizedString(statusExecuting, @"");
-	self.storeKISSDataRequestView.statusLabel.textColor = [UIColor blackColor];
+	self.requestView.statusLabel.text = statusExecuting;
+	self.requestView.statusLabel.textColor = [UIColor blackColor];
 	
 	[self log:[NSString stringWithFormat:@"Requesting data for Product IDs...", nonConsumableProductIdentifier1]];
 	
@@ -116,34 +162,39 @@ request;
 										nil]
 	 success:^(StoreKISSDataRequest *request,
 			   SKProductsResponse *response) {
-		 NSString *result = NSLocalizedString(statusSuccess, @"");
+		 NSString *result = statusSuccess;
 		 if (response.products.count == 2) {
 			 result = [result stringByAppendingFormat:@" %@ %@",
 					   ((SKProduct *)[response.products objectAtIndex:0]).productIdentifier,
 					   ((SKProduct *)[response.products objectAtIndex:1]).productIdentifier];
 		 }
 		 
-		 self.storeKISSDataRequestView.statusLabel.text = result;
-		 self.storeKISSDataRequestView.statusLabel.textColor = [UIColor greenColor];
+		 self.requestView.statusLabel.text = result;
+		 self.requestView.statusLabel.textColor = [UIColor greenColor];
 		 
 		 [self log:@"Finished with success"];
 		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
 		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
-		 self.storeKISSDataRequestView.statusLabel.text = NSLocalizedString(statusFailure, @"");
-		 self.storeKISSDataRequestView.statusLabel.textColor = [UIColor redColor];
+		 self.requestView.statusLabel.text = statusFailure;
+		 self.requestView.statusLabel.textColor = [UIColor redColor];
 		 
 		 [self log:@"Finished with error"];
 		 [self log:[NSString stringWithFormat:@"%@", error.localizedDescription]]; 
 	 }];
 }
 
+- (void)didReceiveDataRequestNotification:(NSNotification *)notification
+{
+	self.requestView.notificationStatusLabel.text = notification.name;
+}
+
 #pragma mark - Misc
 
 - (void)log:(NSString *)message
 {
-	self.storeKISSDataRequestView.logTextView.text = [self.storeKISSDataRequestView.logTextView.text 
-													  stringByAppendingFormat:@"%@\r\n\r\n", message];
+	self.requestView.logTextView.text = [self.requestView.logTextView.text 
+										 stringByAppendingFormat:@"%@\r\n\r\n", message];
 }
 
 @end

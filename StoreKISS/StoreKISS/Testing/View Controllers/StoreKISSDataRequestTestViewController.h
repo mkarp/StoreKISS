@@ -14,6 +14,9 @@ extern NSString * const statusNA;
 extern NSString * const statusSuccess;
 extern NSString * const statusExecuting;
 extern NSString * const statusFailure;
+extern NSString * const notificationStatusNA;
+extern NSString * const notificationStatusSuccess;
+extern NSString * const notificationStatusFailure;
 
 @interface StoreKISSDataRequestTestViewController : UIViewController
 
