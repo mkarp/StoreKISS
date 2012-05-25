@@ -17,6 +17,7 @@
 		04D72157156F94BB00099B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72154156F94BB00099B8A /* RootViewController.m */; };
 		04D72158156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */; };
 		04D7215E156F99F200099B8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04D7215D156F99F200099B8A /* Localizable.strings */; };
+		04D72161156F9C1D00099B8A /* StoreKISSDataRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72160156F9C1D00099B8A /* StoreKISSDataRequestView.m */; };
 		04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
 		04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
 		04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */; };
@@ -51,6 +52,8 @@
 		04D72155156F94BB00099B8A /* StoreKISSDataRequestTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequestTestViewController.h; sourceTree = "<group>"; };
 		04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequestTestViewController.m; sourceTree = "<group>"; };
 		04D7215D156F99F200099B8A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		04D7215F156F9C1D00099B8A /* StoreKISSDataRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreKISSDataRequestView.h; path = Views/StoreKISSDataRequestView.h; sourceTree = "<group>"; };
+		04D72160156F9C1D00099B8A /* StoreKISSDataRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreKISSDataRequestView.m; path = Views/StoreKISSDataRequestView.m; sourceTree = "<group>"; };
 		04DAE596156E758A00B5AFC6 /* StoreKISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreKISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAE59A156E758A00B5AFC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		04DAE59C156E758A00B5AFC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				04D72152156F94BB00099B8A /* View Controllers */,
+				04D72162156F9C2100099B8A /* Views */,
 			);
 			path = Testing;
 			sourceTree = "<group>";
@@ -112,6 +116,15 @@
 				04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		04D72162156F9C2100099B8A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				04D7215F156F9C1D00099B8A /* StoreKISSDataRequestView.h */,
+				04D72160156F9C1D00099B8A /* StoreKISSDataRequestView.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		04DAE58B156E758A00B5AFC6 = {
@@ -313,6 +326,7 @@
 				04702C9B156F904100EA9D2B /* StoreKISSShared.m in Sources */,
 				04D72157156F94BB00099B8A /* RootViewController.m in Sources */,
 				04D72158156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m in Sources */,
+				04D72161156F9C1D00099B8A /* StoreKISSDataRequestView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

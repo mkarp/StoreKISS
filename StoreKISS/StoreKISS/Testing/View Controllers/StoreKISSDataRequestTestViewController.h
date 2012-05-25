@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * const nonConsumableProductIdentifier;
+extern NSString * const statusNA;
+extern NSString * const statusSuccess;
+extern NSString * const statusExecuting;
+extern NSString * const statusFailure;
+
 @interface StoreKISSDataRequestTestViewController : UIViewController
 
 @end
