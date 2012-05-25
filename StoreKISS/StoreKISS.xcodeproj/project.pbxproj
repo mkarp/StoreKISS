@@ -8,10 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		04702C90156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */; };
-		04702C91156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */; };
 		04702C94156E7D9D00EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
 		04702C95156E7E0300EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
-		04702C98156E7E4700EA9D2B /* StoreKISSDataRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C97156E7E4700EA9D2B /* StoreKISSDataRequestTests.m */; };
+		04702C9B156F904100EA9D2B /* StoreKISSShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C9A156F904100EA9D2B /* StoreKISSShared.m */; };
+		04702C9C156F904100EA9D2B /* StoreKISSShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C9A156F904100EA9D2B /* StoreKISSShared.m */; };
+		04702C9D156F90FD00EA9D2B /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */; };
+		04702C9E156F910200EA9D2B /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
+		04D72157156F94BB00099B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72154156F94BB00099B8A /* RootViewController.m */; };
+		04D72158156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */; };
+		04D7215E156F99F200099B8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04D7215D156F99F200099B8A /* Localizable.strings */; };
 		04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
 		04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
 		04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */; };
@@ -22,9 +27,7 @@
 		04DAE5B4156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
 		04DAE5B5156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
 		04DAE5BD156E758B00B5AFC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04DAE5BB156E758B00B5AFC6 /* InfoPlist.strings */; };
-		04DAE5C0156E758B00B5AFC6 /* StoreKISSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5BF156E758B00B5AFC6 /* StoreKISSTests.m */; };
 		04DAE5CC156E75CE00B5AFC6 /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
-		04DAE5CD156E75CE00B5AFC6 /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +44,13 @@
 		04702C8E156E7B0D00EA9D2B /* StoreKISSDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequest.h; sourceTree = "<group>"; };
 		04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequest.m; sourceTree = "<group>"; };
 		04702C93156E7D9D00EA9D2B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		04702C96156E7E4700EA9D2B /* StoreKISSDataRequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequestTests.h; sourceTree = "<group>"; };
-		04702C97156E7E4700EA9D2B /* StoreKISSDataRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequestTests.m; sourceTree = "<group>"; };
+		04702C99156F904100EA9D2B /* StoreKISSShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSShared.h; sourceTree = "<group>"; };
+		04702C9A156F904100EA9D2B /* StoreKISSShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSShared.m; sourceTree = "<group>"; };
+		04D72153156F94BB00099B8A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		04D72154156F94BB00099B8A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		04D72155156F94BB00099B8A /* StoreKISSDataRequestTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequestTestViewController.h; sourceTree = "<group>"; };
+		04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequestTestViewController.m; sourceTree = "<group>"; };
+		04D7215D156F99F200099B8A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		04DAE596156E758A00B5AFC6 /* StoreKISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreKISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAE59A156E758A00B5AFC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		04DAE59C156E758A00B5AFC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,8 +65,6 @@
 		04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		04DAE5BA156E758B00B5AFC6 /* StoreKISSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreKISSTests-Info.plist"; sourceTree = "<group>"; };
 		04DAE5BC156E758B00B5AFC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		04DAE5BE156E758B00B5AFC6 /* StoreKISSTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreKISSTests.h; sourceTree = "<group>"; };
-		04DAE5BF156E758B00B5AFC6 /* StoreKISSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreKISSTests.m; sourceTree = "<group>"; };
 		04DAE5CA156E75CE00B5AFC6 /* StoreKISS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISS.h; sourceTree = "<group>"; };
 		04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +95,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D72151156F94BB00099B8A /* Testing */ = {
+			isa = PBXGroup;
+			children = (
+				04D72152156F94BB00099B8A /* View Controllers */,
+			);
+			path = Testing;
+			sourceTree = "<group>";
+		};
+		04D72152156F94BB00099B8A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04D72153156F94BB00099B8A /* RootViewController.h */,
+				04D72154156F94BB00099B8A /* RootViewController.m */,
+				04D72155156F94BB00099B8A /* StoreKISSDataRequestTestViewController.h */,
+				04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		04DAE58B156E758A00B5AFC6 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				04DAE5C9156E75CE00B5AFC6 /* StoreKISS */,
+				04D72151156F94BB00099B8A /* Testing */,
 				04DAE5A9156E758A00B5AFC6 /* AppDelegate.h */,
 				04DAE5AA156E758A00B5AFC6 /* AppDelegate.m */,
 				04DAE5A1156E758A00B5AFC6 /* Supporting Files */,
@@ -138,6 +164,7 @@
 				04DAE5A3156E758A00B5AFC6 /* InfoPlist.strings */,
 				04DAE5A6156E758A00B5AFC6 /* main.m */,
 				04DAE5A8156E758A00B5AFC6 /* StoreKISS-Prefix.pch */,
+				04D7215D156F99F200099B8A /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -145,10 +172,6 @@
 		04DAE5B8156E758A00B5AFC6 /* StoreKISSTests */ = {
 			isa = PBXGroup;
 			children = (
-				04DAE5BE156E758B00B5AFC6 /* StoreKISSTests.h */,
-				04DAE5BF156E758B00B5AFC6 /* StoreKISSTests.m */,
-				04702C96156E7E4700EA9D2B /* StoreKISSDataRequestTests.h */,
-				04702C97156E7E4700EA9D2B /* StoreKISSDataRequestTests.m */,
 				04DAE5B9156E758B00B5AFC6 /* Supporting Files */,
 			);
 			path = StoreKISSTests;
@@ -168,6 +191,8 @@
 			children = (
 				04DAE5CA156E75CE00B5AFC6 /* StoreKISS.h */,
 				04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */,
+				04702C99156F904100EA9D2B /* StoreKISSShared.h */,
+				04702C9A156F904100EA9D2B /* StoreKISSShared.m */,
 				04702C8E156E7B0D00EA9D2B /* StoreKISSDataRequest.h */,
 				04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */,
 			);
@@ -220,6 +245,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Redigion;
 			};
 			buildConfigurationList = 04DAE590156E758A00B5AFC6 /* Build configuration list for PBXProject "StoreKISS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -245,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DAE5A5156E758A00B5AFC6 /* InfoPlist.strings in Resources */,
+				04D7215E156F99F200099B8A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +310,9 @@
 				04DAE5AB156E758A00B5AFC6 /* AppDelegate.m in Sources */,
 				04DAE5CC156E75CE00B5AFC6 /* StoreKISS.m in Sources */,
 				04702C90156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */,
+				04702C9B156F904100EA9D2B /* StoreKISSShared.m in Sources */,
+				04D72157156F94BB00099B8A /* RootViewController.m in Sources */,
+				04D72158156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,10 +320,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DAE5C0156E758B00B5AFC6 /* StoreKISSTests.m in Sources */,
-				04DAE5CD156E75CE00B5AFC6 /* StoreKISS.m in Sources */,
-				04702C91156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */,
-				04702C98156E7E4700EA9D2B /* StoreKISSDataRequestTests.m in Sources */,
+				04702C9C156F904100EA9D2B /* StoreKISSShared.m in Sources */,
+				04702C9D156F90FD00EA9D2B /* StoreKISSDataRequest.m in Sources */,
+				04702C9E156F910200EA9D2B /* StoreKISS.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,10 +406,12 @@
 		04DAE5C4156E758B00B5AFC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Misha Karpenko (Y3L5EZ49HK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreKISS/StoreKISS-Prefix.pch";
 				INFOPLIST_FILE = "StoreKISS/StoreKISS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D2D17230-61CA-4360-AF85-938767C5FC79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -388,10 +419,12 @@
 		04DAE5C5156E758B00B5AFC6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Misha Karpenko (Y3L5EZ49HK)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreKISS/StoreKISS-Prefix.pch";
 				INFOPLIST_FILE = "StoreKISS/StoreKISS-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D2D17230-61CA-4360-AF85-938767C5FC79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

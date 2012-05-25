@@ -3,11 +3,11 @@
 //  StoreKISS
 //
 //  Created by Misha Karpenko on 5/24/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Redigion. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <StoreKit/StoreKit.h>
+#import "StoreKISSShared.h"
+#import "StoreKISSDataRequest.h"
 
 /**
  Drafting with documentation and idead here.
@@ -38,10 +38,8 @@
 
  **Product ID** is a unique In-App Purchase product identifier of the item being purchased. It is usually stored locally in your application or at your server and should be assigned to a concrete In-App Purchase item at the iTunesConnect portal (https://itunesconnect.apple.com).
  */
- 
-extern NSString * const StoreKISSErrorDomain;
 
-@interface StoreKISS : NSObject<SKPaymentTransactionObserver>
+//@interface StoreKISS : NSObject<SKPaymentTransactionObserver>
 
 ///----------------------
 /// @name General methods
@@ -50,38 +48,12 @@ extern NSString * const StoreKISSErrorDomain;
 /**
  Tells whether you can make payments via In-App Purchase.
  */
-- (BOOL)canMakePayments;
+//- (BOOL)canMakePayments;
 
 /**
  Restore In-App Purchases user has already made with current iTunes account.
  */
-- (void)restorePurchases;
-
-///------------------------------------------------------
-/// @name Fetching payment data for In-App Purchase items
-///------------------------------------------------------
-
-/**
- Requests payment data from iTunesConnect for the item with a concrete Product ID.
- 
- @param productId Product ID of the item for which payment data is fetched.
- @param success Success block.
- @param failure Failure block.
- */
-- (void)requestDataForItemWithProductId:(NSString *)productId
-								success:(void(^)())success
-								failure:(void(^)(NSError *error))failure;
-
-/**
- Requests payment data from iTunesConnect for the item with a concrete Product ID.
- 
- @param productId Product ID of the item for which payment data is fetched.
- @param success Success block.
- @param failure Failure block.
- */
-- (void)requestDataForItemsWithProductIds:(NSSet *)productIds
-								  success:(void(^)())success
-								  failure:(void(^)(NSError *error))failure;
+//- (void)restorePurchases;
 
 ///-------------------------
 /// @name Purchasing an item
@@ -94,8 +66,8 @@ extern NSString * const StoreKISSErrorDomain;
  @param success Success block.
  @param failure Failure block.
  */
-- (void)purchaseItemWithProductId:(NSString *)productId
-						  success:(void(^)())success
-						  failure:(void(^)(NSError *error))failure;
-
-@end
+//- (void)purchaseItemWithProductId:(NSString *)productId
+//						  success:(void(^)())success
+//						  failure:(void(^)(NSError *error))failure;
+//
+//@end
