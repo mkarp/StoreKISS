@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const nonConsumableProductIdentifier;
+extern NSString * const nonConsumableProductIdentifier1;
+extern NSString * const nonConsumableProductIdentifier2;
 extern NSString * const statusNA;
 extern NSString * const statusSuccess;
 extern NSString * const statusExecuting;
