@@ -1,5 +1,5 @@
 PODS:
-  - Reachability (2.0.5)
+  - Reachability (3.0.0)
 
 DEPENDENCIES:
-  - Reachability (~> 2.0.4)
+  - Reachability

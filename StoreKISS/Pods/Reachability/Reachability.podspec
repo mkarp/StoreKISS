@@ -1,14 +1,12 @@
 Pod::Spec.new do |s|
   s.name         = 'Reachability'
-  s.version      = '2.0.5'
-  s.platform     = :ios
-  s.homepage     = 'http://blog.ddg.com/?p=24'
-  s.authors      = 'Apple', 'Donoho Design Group, LLC'
-  s.summary      = 'A wrapper for the SystemConfiguration Reachability APIs.'
-  s.description  = 'This is Apple’s example code of the SystemConfiguration Reachability APIs, ' \
-                   'adapted by Andrew Donoho, split-off from the ASIHTTPRequest source. ' \
-                   '(This code needs an actual maintainer.)'
-  s.source       = { :git => 'git://github.com/CocoaPods/unmaintained-pod-Reachability.git', :tag => '2.0.5' }
+  s.version      = '3.0.0'
+  s.license      = 'BSD'
+  s.homepage     = 'https://github.com/tonymillion/Reachability'
+  s.authors      = { 'Tony Million' => 'tonymillion@gmail.com' }
+  s.summary      = 'ARC and GCD Compatible Reachability Class for iOS. Drop in replacement for Apple Reachability.'
+  s.source       = { :git => 'https://github.com/tonymillion/Reachability.git', :tag => '3.0.0' }
   s.source_files = 'Reachability.{h,m}'
   s.framework    = 'SystemConfiguration'
+  s.requires_arc = true
 end
