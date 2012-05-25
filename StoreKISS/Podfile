@@ -1,0 +1,2 @@
+platform :ios
+dependency 'Reachability',      '~> 2.0.4'

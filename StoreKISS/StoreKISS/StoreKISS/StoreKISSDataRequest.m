@@ -7,6 +7,7 @@
 //
 
 #import "StoreKISSDataRequest.h"
+#import "Reachability.h"
 
 @interface StoreKISSDataRequest ()
 
@@ -55,9 +56,20 @@
 	if ([self isExecuting]) {
 		return;
 	}
-
+	
 	self.success = successBlock;
 	self.failure = failureBlock;
+	
+	if ( ! [[Reachability reachabilityForInternetConnection] isReachable]) {
+		self.error = [NSError
+					  errorWithDomain:StoreKISSErrorDomain
+					  code:0
+					  userInfo:[NSDictionary
+								dictionaryWithObject:@"No internet connection."
+								forKey:NSLocalizedDescriptionKey]];
+		[self finish];
+		return;
+	}
 
 	self.request = [[SKProductsRequest alloc]
 					initWithProductIdentifiers:productIds];

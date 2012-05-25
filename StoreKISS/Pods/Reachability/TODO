@@ -1,0 +1,2 @@
+* Make it compatible with OS X. The important part is that kSCNetworkReachabilityFlagsIsWWAN is an iOS only constant.
+* See if there’s any point in merging in changes of Apple’s 2.2 example code: http://developer.apple.com/library/ios/#samplecode/Reachability/Introduction/Intro.html

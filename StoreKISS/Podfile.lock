@@ -1,0 +1,5 @@
+PODS:
+  - Reachability (2.0.5)
+
+DEPENDENCIES:
+  - Reachability (~> 2.0.4)
