@@ -21,6 +21,33 @@ typedef void (^DataRequestSuccessBlock)(StoreKISSDataRequest *request, SKProduct
 typedef void (^DataRequestFailureBlock)(NSError *error);
 
 /**
+ Notification that a certain data request did start.
+ */
+extern NSString * const StoreKISSNotificationDataRequestStarted;
+
+/**
+ Notification identifier that a certain data request did finish with success.
+ Notification will contain SKProductsResponse in userInfo.
+ */
+extern NSString * const StoreKISSNotificationDataRequestSuccess;
+
+/**
+ Key for SKProductsResponse in userInfo of the StoreKISSNotificationDataRequestSuccess notification.
+ */
+extern NSString * const StoreKISSNotificationDataRequestSuccessResponseKey;
+
+/**
+ Notification identifier that a certain data request did finish with failure.
+ Notification will contain error in userInfo.
+ */
+extern NSString * const StoreKISSNotificationDataRequestFailure;
+
+/**
+ Key for error in userInfo of the StoreKISSNotificationDataRequestFailure notification.
+ */
+extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
+
+/**
  Class for fetching payment data from iTunesConnect using Product IDs.
  */
 @interface StoreKISSDataRequest : NSObject<SKProductsRequestDelegate>

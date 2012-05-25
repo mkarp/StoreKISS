@@ -9,6 +9,12 @@
 #import "StoreKISSDataRequest.h"
 #import "Reachability.h"
 
+NSString * const StoreKISSNotificationDataRequestStarted = @"com.redigion.storekiss.notification.dataRequest.started";
+NSString * const StoreKISSNotificationDataRequestSuccess = @"com.redigion.storekiss.notification.dataRequest.success";
+NSString * const StoreKISSNotificationDataRequestSuccessResponseKey = @"response";
+NSString * const StoreKISSNotificationDataRequestFailure = @"com.redigion.storekiss.notification.dataRequest.failure";
+NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"error";
+
 @interface StoreKISSDataRequest ()
 
 @property (strong, nonatomic) SKProductsRequest *request;
@@ -23,10 +29,10 @@
 
 @synthesize status;
 @synthesize request,
-			response,
-			error,
-			success,
-			failure;
+response,
+error,
+success,
+failure;
 
 - (id)init
 {
@@ -70,7 +76,7 @@
 		[self finish];
 		return;
 	}
-
+	
 	self.request = [[SKProductsRequest alloc]
 					initWithProductIdentifiers:productIds];
 	self.request.delegate = self;
@@ -83,19 +89,38 @@
 - (void)start
 {
 	self.status = StoreKISSDataRequestStatusStarted;
+	[[NSNotificationCenter defaultCenter]
+	 postNotificationName:StoreKISSNotificationDataRequestStarted
+	 object:self];
+	
 	[self.request start];
 }
 
 - (void)finish
 {
 	self.status = StoreKISSDataRequestStatusFinished;
-	if (self.error) {
-		if (self.failure) {
-			self.failure(self.error);
-		}
-	} else {
+	
+	if ( ! self.error && self.response) {
+		[[NSNotificationCenter defaultCenter]
+		 postNotificationName:StoreKISSNotificationDataRequestSuccess
+		 object:self
+		 userInfo:[NSDictionary
+				   dictionaryWithObject:self.response
+				   forKey:StoreKISSNotificationDataRequestSuccessResponseKey]];
+		
 		if (self.success) {
 			self.success(self, self.response);
+		}
+	} else {
+		[[NSNotificationCenter defaultCenter]
+		 postNotificationName:StoreKISSNotificationDataRequestFailure
+		 object:self
+		 userInfo:[NSDictionary
+				   dictionaryWithObject:self.error
+				   forKey:StoreKISSNotificationDataRequestFailureErrorKey]];
+		
+		if (self.failure) {
+			self.failure(self.error);
 		}
 	}
 }

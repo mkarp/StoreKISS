@@ -10,7 +10,7 @@
 #import "StoreKISSDataRequest.h"
 
 /**
- Drafting with documentation and idead here.
+ Drafting with documentation and ideas here.
  
  Docs and readme will be built with make and appledoc.
 
@@ -22,7 +22,7 @@
  
  As a library user I want to:
  
- - make requests for product data by product ids from Apple with success/failure block - StoreKISSDataRequest;
+ - (DONE) make requests for product data by product ids from Apple with success/failure block - StoreKISSDataRequest;
  - make purchases by product ids/SKProduct with success/failure block;
  - make these receiving notifications.
 
