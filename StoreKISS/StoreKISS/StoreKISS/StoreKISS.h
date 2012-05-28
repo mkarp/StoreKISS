@@ -16,7 +16,7 @@
 
  Cover everything with tests.
 
- Lightweight wrapper for Apple's StoreKit framework created with "Keep It Simple, Stupid" concept and love ❤.
+ Lightweight wrapper for Apple's StoreKit framework created with KISS concept and love ❤.
  
  StoreKISS.h should be an inclide file for all project files.
  
@@ -29,6 +29,8 @@
  Uses ARC.
  
  Only for Consumable and Non-consumable products now. Subscriptions coming later (maybe).
+ 
+ Requires Reachability.
 
  ##How To Use
  

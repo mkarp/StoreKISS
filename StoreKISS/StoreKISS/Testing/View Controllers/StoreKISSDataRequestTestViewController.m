@@ -187,6 +187,13 @@ request;
 - (void)didReceiveDataRequestNotification:(NSNotification *)notification
 {
 	self.requestView.notificationStatusLabel.text = notification.name;
+	if ([notification.name isEqualToString:StoreKISSNotificationDataRequestSuccess]) {
+		self.requestView.notificationStatusLabel.textColor = [UIColor greenColor];
+	} else if ([notification.name isEqualToString:StoreKISSNotificationDataRequestFailure]) {
+		self.requestView.notificationStatusLabel.textColor = [UIColor redColor];
+	} else {
+		self.requestView.notificationStatusLabel.textColor = [UIColor blackColor];
+	}
 }
 
 #pragma mark - Misc

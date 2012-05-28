@@ -29,10 +29,10 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"error";
 
 @synthesize status;
 @synthesize request,
-response,
-error,
-success,
-failure;
+			response,
+			error,
+			success,
+			failure;
 
 - (id)init
 {

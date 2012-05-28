@@ -10,7 +10,6 @@
 
 @class StoreKISSDataRequest;
 
-// Types
 typedef enum {
 	StoreKISSDataRequestStatusNew,
 	StoreKISSDataRequestStatusStarted,

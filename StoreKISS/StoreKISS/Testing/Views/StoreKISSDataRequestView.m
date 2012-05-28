@@ -40,10 +40,16 @@ logTextView;
 		
 		self.statusLabel = [[UILabel alloc] init];
 		self.statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		self.statusLabel.numberOfLines = 0;
+		self.statusLabel.minimumFontSize = 10.0f;
+		self.statusLabel.adjustsFontSizeToFitWidth = YES;
 		[self addSubview:self.statusLabel];
 		
 		self.notificationStatusLabel = [[UILabel alloc] init];
 		self.notificationStatusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		self.notificationStatusLabel.numberOfLines = 0;
+		self.notificationStatusLabel.minimumFontSize = 10.0f;
+		self.notificationStatusLabel.adjustsFontSizeToFitWidth = YES;
 		[self addSubview:self.notificationStatusLabel];
 		
 		self.logTextView = [[UITextView alloc] init];
@@ -57,14 +63,15 @@ logTextView;
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
-	self.launchSingleButton.frame = CGRectMake(20.0f, 20.0f, self.frame.size.width - 20.0f * 2.0f, 44.0f);
-	self.launchBulkButton.frame = CGRectMake(20.0f, 84.0f, self.frame.size.width - 20.0f * 2.0f, 44.0f);
 	
-	CGFloat labelWidth = (self.frame.size.width - 20.0f * 3.0f) / 2.0f;
-	self.statusLabel.frame = CGRectMake(20.0f, 148.0f, labelWidth, 44.0f);
-	self.notificationStatusLabel.frame = CGRectMake(20.0f + labelWidth + 20.0f, 148.0f, labelWidth, 44.0f);
+	CGFloat buttonWidth = (self.frame.size.width - 20.0f * 3.0f) / 2.0f;
+	self.launchSingleButton.frame = CGRectMake(20.0f, 20.0f, buttonWidth, 40.0f);
+	self.launchBulkButton.frame = CGRectMake(20.0f + buttonWidth + 20.0f, 20.0f, buttonWidth, 40.0f);
 	
-	self.logTextView.frame = CGRectMake(20.0f, 202.0f, self.frame.size.width - 20.0f * 2.0f, self.frame.size.height - 202.0f - 20.0f);
+	self.statusLabel.frame = CGRectMake(20.0f, 80.0f, self.frame.size.width - 20.0f * 2.0f, 50.0f);
+	self.notificationStatusLabel.frame = CGRectMake(20.0f, 140.0f, self.frame.size.width - 20.0f * 2.0f, 50.0f);
+	
+	self.logTextView.frame = CGRectMake(20.0f, 210.0f, self.frame.size.width - 20.0f * 2.0f, self.frame.size.height - 202.0f - 20.0f);
 }
 
 @end
