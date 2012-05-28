@@ -10,6 +10,7 @@
 
 NSString * const StoreKISSNotificationPaymentRequestStarted = @"com.redigion.storekiss.notification.paymentRequest.started";
 NSString * const StoreKISSNotificationPaymentRequestSuccess = @"com.redigion.storekiss.notification.paymentRequest.success";
+NSString * const StoreKISSNotificationPaymentRequestPurchasing = @"com.redigion.storekiss.notification.paymentRequest.purchasing";
 NSString * const StoreKISSNotificationPaymentRequestSuccessTransactionKey = @"com.redigion.storekiss.notification.paymentRequest.success.transaction";
 NSString * const StoreKISSNotificationPaymentRequestFailure = @"com.redigion.storekiss.notification.PaymentRequest.failure";
 NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redigion.storekiss.notification.PaymentRequest.failure.error";
@@ -55,6 +56,17 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 						 failure:(PaymentRequestFailureBlock)failureBlock
 {
 	if ([self isExecuting]) {
+		return;
+	}
+	
+	if (skProduct == nil) {
+		self.error = [NSError
+					  errorWithDomain:StoreKISSErrorDomain
+					  code:0
+					  userInfo:[NSDictionary
+								dictionaryWithObject:@"SKProduct should not be nil."
+								forKey:NSLocalizedDescriptionKey]];
+		[self finish];
 		return;
 	}
 
@@ -131,6 +143,12 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 	
 	switch (transaction.transactionState) {
 		case SKPaymentTransactionStatePurchasing:
+			[[NSNotificationCenter defaultCenter]
+			 postNotificationName:StoreKISSNotificationPaymentRequestPurchasing
+			 object:self
+			 userInfo:[NSDictionary
+					   dictionaryWithObject:self.transaction
+					   forKey:StoreKISSNotificationPaymentRequestSuccessTransactionKey]];
 			break;
 	
 		case SKPaymentTransactionStatePurchased:

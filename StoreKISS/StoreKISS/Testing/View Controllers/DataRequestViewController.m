@@ -10,15 +10,15 @@
 #import "DataRequestView.h"
 #import "StoreKISSDataRequest.h"
 
-NSString * const nonConsumableProductIdentifier1 = @"com.redigion.storekiss.nonconsumable1";
-NSString * const nonConsumableProductIdentifier2 = @"com.redigion.storekiss.nonconsumable2";
-NSString * const statusNA = @"N/A";
-NSString * const statusSuccess = @"Success";
-NSString * const statusExecuting = @"Executing";
-NSString * const statusFailure = @"Failure";
-NSString * const notificationStatusNA = @"N/A";
-NSString * const notificationStatusSuccess = @"Success";
-NSString * const notificationStatusFailure = @"Failure";
+NSString * const dataRequestNonConsumableProductId1 = @"com.redigion.storekiss.nonconsumable1";
+NSString * const dataRequestNonConsumableProductId2 = @"com.redigion.storekiss.nonconsumable2";
+NSString * const dataRequestStatusNA = @"N/A";
+NSString * const dataRequestStatusSuccess = @"Success";
+NSString * const dataRequestStatusExecuting = @"Executing";
+NSString * const dataRequestStatusFailure = @"Failure";
+NSString * const dataRequestNotificationStatusNA = @"N/A";
+NSString * const dataRequestNotificationStatusSuccess = @"Success";
+NSString * const dataRequestNotificationStatusFailure = @"Failure";
 
 @interface DataRequestViewController ()
 
@@ -103,10 +103,11 @@ NSString * const notificationStatusFailure = @"Failure";
 	 action:@selector(launchBulkButtonOnTouchUpInside:)
 	 forControlEvents:UIControlEventTouchUpInside];
 	
-	self.dataRequestView.statusLabel.text = statusNA;
+	self.dataRequestView.statusLabel.text = dataRequestStatusNA;
 	self.dataRequestView.statusLabel.textColor = [UIColor blackColor];
 	
-	self.dataRequestView.notificationStatusLabel.text = notificationStatusNA;
+	self.dataRequestView.notificationStatusLabel.text = dataRequestNotificationStatusNA;
+	self.dataRequestView.notificationStatusLabel.textColor = [UIColor blackColor];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -118,16 +119,19 @@ NSString * const notificationStatusFailure = @"Failure";
 
 - (void)launchButtonOnTouchUpInside:(id)sender
 {
-	self.dataRequestView.statusLabel.text = statusExecuting;
+	self.dataRequestView.statusLabel.text = dataRequestStatusExecuting;
 	self.dataRequestView.statusLabel.textColor = [UIColor blackColor];
 	
-	[self log:[NSString stringWithFormat:@"Requesting data for Product ID %@...", nonConsumableProductIdentifier1]];
+	self.dataRequestView.notificationStatusLabel.text = dataRequestNotificationStatusNA;
+	self.dataRequestView.notificationStatusLabel.textColor = [UIColor blackColor];
+	
+	[self log:[NSString stringWithFormat:@"Requesting data for Product ID %@...", dataRequestNonConsumableProductId1]];
 	
 	[self.request
-	 requestDataForItemWithProductId:nonConsumableProductIdentifier1
+	 requestDataForItemWithProductId:dataRequestNonConsumableProductId1
 	 success:^(StoreKISSDataRequest *request,
 			   SKProductsResponse *response) {
-		 NSString *result = statusSuccess;
+		 NSString *result = dataRequestStatusSuccess;
 		 if (response.products.count == 1) {
 			 result = [result stringByAppendingFormat:@" %@",
 					   ((SKProduct *)[response.products objectAtIndex:0]).productIdentifier];
@@ -140,7 +144,7 @@ NSString * const notificationStatusFailure = @"Failure";
 		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
 		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
-		 self.dataRequestView.statusLabel.text = statusFailure;
+		 self.dataRequestView.statusLabel.text = dataRequestStatusFailure;
 		 self.dataRequestView.statusLabel.textColor = [UIColor redColor];
 		 
 		 [self log:@"Finished with error"];
@@ -150,19 +154,19 @@ NSString * const notificationStatusFailure = @"Failure";
 
 - (void)launchBulkButtonOnTouchUpInside:(id)sender
 {
-	self.dataRequestView.statusLabel.text = statusExecuting;
+	self.dataRequestView.statusLabel.text = dataRequestStatusExecuting;
 	self.dataRequestView.statusLabel.textColor = [UIColor blackColor];
 	
-	[self log:[NSString stringWithFormat:@"Requesting data for Product IDs...", nonConsumableProductIdentifier1]];
+	[self log:[NSString stringWithFormat:@"Requesting data for Product IDs...", dataRequestNonConsumableProductId1]];
 	
 	[self.request
 	 requestDataForItemsWithProductIds:[NSSet setWithObjects:
-										nonConsumableProductIdentifier1, 
-										nonConsumableProductIdentifier2, 
+										dataRequestNonConsumableProductId1, 
+										dataRequestNonConsumableProductId2, 
 										nil]
 	 success:^(StoreKISSDataRequest *request,
 			   SKProductsResponse *response) {
-		 NSString *result = statusSuccess;
+		 NSString *result = dataRequestStatusSuccess;
 		 if (response.products.count == 2) {
 			 result = [result stringByAppendingFormat:@" %@ %@",
 					   ((SKProduct *)[response.products objectAtIndex:0]).productIdentifier,
@@ -176,7 +180,7 @@ NSString * const notificationStatusFailure = @"Failure";
 		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
 		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
-		 self.dataRequestView.statusLabel.text = statusFailure;
+		 self.dataRequestView.statusLabel.text = dataRequestStatusFailure;
 		 self.dataRequestView.statusLabel.textColor = [UIColor redColor];
 		 
 		 [self log:@"Finished with error"];
@@ -186,7 +190,7 @@ NSString * const notificationStatusFailure = @"Failure";
 
 - (void)didReceiveDataRequestNotification:(NSNotification *)notification
 {
-	self.dataRequestView.notificationStatusLabel.text = notification.name;
+	self.dataRequestView.notificationStatusLabel.text = NSLocalizedString(notification.name, @"");
 	if ([notification.name isEqualToString:StoreKISSNotificationDataRequestSuccess]) {
 		self.dataRequestView.notificationStatusLabel.textColor = [UIColor greenColor];
 	} else if ([notification.name isEqualToString:StoreKISSNotificationDataRequestFailure]) {

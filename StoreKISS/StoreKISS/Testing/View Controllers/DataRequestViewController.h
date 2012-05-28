@@ -8,15 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-extern NSString * const nonConsumableProductIdentifier1;
-extern NSString * const nonConsumableProductIdentifier2;
-extern NSString * const statusNA;
-extern NSString * const statusSuccess;
-extern NSString * const statusExecuting;
-extern NSString * const statusFailure;
-extern NSString * const notificationStatusNA;
-extern NSString * const notificationStatusSuccess;
-extern NSString * const notificationStatusFailure;
+extern NSString * const dataRequestNonConsumableProductId1;
+extern NSString * const dataRequestNonConsumableProductId2;
+extern NSString * const dataRequestStatusNA;
+extern NSString * const dataRequestStatusSuccess;
+extern NSString * const dataRequestStatusExecuting;
+extern NSString * const dataRequestStatusFailure;
+extern NSString * const dataRequestNotificationStatusNA;
+extern NSString * const dataRequestNotificationStatusSuccess;
+extern NSString * const dataRequestNotificationStatusFailure;
 
 @interface DataRequestViewController : UIViewController
 

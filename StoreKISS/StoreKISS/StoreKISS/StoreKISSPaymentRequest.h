@@ -26,6 +26,11 @@ typedef void (^PaymentRequestFailureBlock)(NSError *error);
 extern NSString * const StoreKISSNotificationPaymentRequestStarted;
 
 /**
+ Notification that a certain payment transaction is running.
+ */
+extern NSString * const StoreKISSNotificationPaymentRequestPurchasing;
+
+/**
  Notification identifier that a certain data request did finish with success.
  Notification will contain SKProductsResponse in userInfo.
  */

@@ -9,3 +9,11 @@
 "RootViewController" = "StoreKISS Tests";
 "DataRequestViewController" = "Data Request";
 "PaymentRequestViewController" = "Payment Request";
+
+"com.redigion.storekiss.notification.dataRequest.started" = "Notification: Started";
+"com.redigion.storekiss.notification.dataRequest.success" = "Notification: Success";
+"com.redigion.storekiss.notification.dataRequest.failure" = "Notification: Failure";
+
+"com.redigion.storekiss.notification.paymentRequest.started" = "Notification: Started";
+"com.redigion.storekiss.notification.paymentRequest.success" = "Notification: Success";
+"com.redigion.storekiss.notification.paymentRequest.failure" = "Notification: Failure";
