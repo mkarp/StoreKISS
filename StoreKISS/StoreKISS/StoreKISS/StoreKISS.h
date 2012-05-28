@@ -8,6 +8,7 @@
 
 #import "StoreKISSShared.h"
 #import "StoreKISSDataRequest.h"
+#import "StoreKISSPaymentRequest.h"
 
 /**
  Drafting with documentation and ideas here.
@@ -31,6 +32,8 @@
  Only for Consumable and Non-consumable products now. Subscriptions coming later (maybe).
  
  Requires Reachability.
+ 
+ Covered with UIAutomation tests because of asynchronous StoreKit calls and prompts.
 
  ##How To Use
  
