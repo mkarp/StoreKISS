@@ -64,7 +64,7 @@
 		04D72155156F94BB00099B8A /* DataRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataRequestViewController.h; sourceTree = "<group>"; };
 		04D72156156F94BB00099B8A /* DataRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequestViewController.m; sourceTree = "<group>"; };
 		04D7215D156F99F200099B8A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		04D7215F156F9C1D00099B8A /* DataRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = DataRequestView.h; path = Views/DataRequestView.h; sourceTree = "<group>"; };
+		04D7215F156F9C1D00099B8A /* DataRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataRequestView.h; path = Views/DataRequestView.h; sourceTree = "<group>"; };
 		04D72160156F9C1D00099B8A /* DataRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataRequestView.m; path = Views/DataRequestView.m; sourceTree = "<group>"; };
 		04DAE596156E758A00B5AFC6 /* StoreKISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreKISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAE59A156E758A00B5AFC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };

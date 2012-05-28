@@ -58,6 +58,10 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
  */
 @interface StoreKISSPaymentRequest : NSObject<SKPaymentTransactionObserver>
 
+///-----------------
+/// @name Properties
+///-----------------
+
 /**
  Status of the request.
  */
@@ -68,7 +72,11 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
 ///---------------------
 
 /**
-
+ Make payment with SKProduct.
+ 
+ @param skProduct SKProduct you've received from StoreKit's API.
+ @param success Block that will be called after successful ending of the operation.
+ @param failure Block that will be called in case of error.
  */
 - (void)makePaymentWithSKProduct:(SKProduct *)skProduct
 						 success:(PaymentRequestSuccessBlock)success

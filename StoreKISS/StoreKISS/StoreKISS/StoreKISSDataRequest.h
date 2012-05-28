@@ -51,6 +51,10 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  */
 @interface StoreKISSDataRequest : NSObject<SKProductsRequestDelegate>
 
+///-----------------
+/// @name Properties
+///-----------------
+
 /**
  Status of the request.
  */
