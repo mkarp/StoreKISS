@@ -7,7 +7,8 @@
 //
 
 #import "RootViewController.h"
-#import "StoreKISSDataRequestTestViewController.h"
+#import "DataRequestViewController.h"
+#import "PaymentRequestViewController.h"
 
 @interface RootViewController ()
 
@@ -26,7 +27,8 @@
 	[super viewDidLoad];
 	self.title = NSLocalizedString(NSStringFromClass([self class]), @"");
 	self.rows = [NSArray arrayWithObjects:
-				 @"StoreKISSDataRequestTestViewController",
+				 @"DataRequestViewController",
+				 @"PaymentRequestViewController",
 				 nil];
 }
 

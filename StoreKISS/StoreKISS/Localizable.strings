@@ -7,4 +7,5 @@
 */
 
 "RootViewController" = "StoreKISS Tests";
-"StoreKISSDataRequestTestViewController" = "StoreKISSDataRequest";
+"DataRequestViewController" = "Data Request";
+"PaymentRequestViewController" = "Payment Request";

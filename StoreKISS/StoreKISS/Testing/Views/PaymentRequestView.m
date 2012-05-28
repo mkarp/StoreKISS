@@ -1,21 +1,16 @@
 //
-//  StoreKISSDataRequestView.m
+//  StoreKISSPaymentRequestView.m
 //  StoreKISS
 //
-//  Created by Misha Karpenko on 5/25/12.
+//  Created by Misha Karpenko on 5/28/12.
 //  Copyright (c) 2012 Redigion. All rights reserved.
 //
 
-#import "StoreKISSDataRequestView.h"
+#import "PaymentRequestView.h"
 
-@interface StoreKISSDataRequestView ()
+@implementation PaymentRequestView
 
-@end
-
-@implementation StoreKISSDataRequestView
-
-@synthesize launchSingleButton,
-			launchBulkButton,
+@synthesize launchButton,
 			statusLabel,
 			notificationStatusLabel,
 			logTextView;
@@ -24,19 +19,12 @@
 {
 	self = [super init];
 	if (self) {
-		self.launchSingleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		self.launchSingleButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		[self.launchSingleButton
-		 setTitle:NSLocalizedString(@"Launch single", @"")
+		self.launchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+		self.launchButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+		[self.launchButton
+		 setTitle:NSLocalizedString(@"Launch", @"")
 		 forState:UIControlStateNormal];
-		[self addSubview:self.launchSingleButton];
-		
-		self.launchBulkButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		self.launchBulkButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-		[self.launchBulkButton
-		 setTitle:NSLocalizedString(@"Launch bulk", @"")
-		 forState:UIControlStateNormal];
-		[self addSubview:self.launchBulkButton];
+		[self addSubview:self.launchButton];
 		
 		self.statusLabel = [[UILabel alloc] init];
 		self.statusLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -64,9 +52,7 @@
 {
 	[super layoutSubviews];
 	
-	CGFloat buttonWidth = (self.frame.size.width - 20.0f * 3.0f) / 2.0f;
-	self.launchSingleButton.frame = CGRectMake(20.0f, 20.0f, buttonWidth, 40.0f);
-	self.launchBulkButton.frame = CGRectMake(20.0f + buttonWidth + 20.0f, 20.0f, buttonWidth, 40.0f);
+	self.launchButton.frame = CGRectMake(20.0f, 20.0f, self.frame.size.width - 20.0f * 2.0f, 40.0f);
 	
 	self.statusLabel.frame = CGRectMake(20.0f, 80.0f, self.frame.size.width - 20.0f * 2.0f, 50.0f);
 	self.notificationStatusLabel.frame = CGRectMake(20.0f, 140.0f, self.frame.size.width - 20.0f * 2.0f, 50.0f);

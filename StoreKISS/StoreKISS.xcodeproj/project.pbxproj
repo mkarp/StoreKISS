@@ -16,14 +16,12 @@
 		04702C9E156F910200EA9D2B /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
 		047EB7E9157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7E8157380C800DDE51E /* StoreKISSPaymentRequest.m */; };
 		047EB7EA157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7E8157380C800DDE51E /* StoreKISSPaymentRequest.m */; };
-		047EB7EE1573850300DDE51E /* StoreKISSPaymentRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7ED1573850300DDE51E /* StoreKISSPaymentRequestViewController.m */; };
-		047EB7EF1573850300DDE51E /* StoreKISSPaymentRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7ED1573850300DDE51E /* StoreKISSPaymentRequestViewController.m */; };
-		047EB7F21573852A00DDE51E /* StoreKISSPaymentRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7F11573852A00DDE51E /* StoreKISSPaymentRequestView.m */; };
-		047EB7F31573852A00DDE51E /* StoreKISSPaymentRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7F11573852A00DDE51E /* StoreKISSPaymentRequestView.m */; };
+		047EB7EE1573850300DDE51E /* PaymentRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */; };
+		047EB7F21573852A00DDE51E /* PaymentRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7F11573852A00DDE51E /* PaymentRequestView.m */; };
 		04D72157156F94BB00099B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72154156F94BB00099B8A /* RootViewController.m */; };
-		04D72158156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */; };
+		04D72158156F94BB00099B8A /* DataRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72156156F94BB00099B8A /* DataRequestViewController.m */; };
 		04D7215E156F99F200099B8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04D7215D156F99F200099B8A /* Localizable.strings */; };
-		04D72161156F9C1D00099B8A /* StoreKISSDataRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72160156F9C1D00099B8A /* StoreKISSDataRequestView.m */; };
+		04D72161156F9C1D00099B8A /* DataRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72160156F9C1D00099B8A /* DataRequestView.m */; };
 		04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
 		04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
 		04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */; };
@@ -57,17 +55,17 @@
 		04702C9A156F904100EA9D2B /* StoreKISSShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSShared.m; sourceTree = "<group>"; };
 		047EB7E7157380C800DDE51E /* StoreKISSPaymentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSPaymentRequest.h; sourceTree = "<group>"; };
 		047EB7E8157380C800DDE51E /* StoreKISSPaymentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSPaymentRequest.m; sourceTree = "<group>"; };
-		047EB7EC1573850300DDE51E /* StoreKISSPaymentRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSPaymentRequestViewController.h; sourceTree = "<group>"; };
-		047EB7ED1573850300DDE51E /* StoreKISSPaymentRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSPaymentRequestViewController.m; sourceTree = "<group>"; };
-		047EB7F01573852A00DDE51E /* StoreKISSPaymentRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreKISSPaymentRequestView.h; path = Views/StoreKISSPaymentRequestView.h; sourceTree = "<group>"; };
-		047EB7F11573852A00DDE51E /* StoreKISSPaymentRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreKISSPaymentRequestView.m; path = Views/StoreKISSPaymentRequestView.m; sourceTree = "<group>"; };
+		047EB7EC1573850300DDE51E /* PaymentRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PaymentRequestViewController.h; sourceTree = "<group>"; };
+		047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentRequestViewController.m; sourceTree = "<group>"; };
+		047EB7F01573852A00DDE51E /* PaymentRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentRequestView.h; path = Views/PaymentRequestView.h; sourceTree = "<group>"; };
+		047EB7F11573852A00DDE51E /* PaymentRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PaymentRequestView.m; path = Views/PaymentRequestView.m; sourceTree = "<group>"; };
 		04D72153156F94BB00099B8A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		04D72154156F94BB00099B8A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		04D72155156F94BB00099B8A /* StoreKISSDataRequestTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequestTestViewController.h; sourceTree = "<group>"; };
-		04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequestTestViewController.m; sourceTree = "<group>"; };
+		04D72155156F94BB00099B8A /* DataRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DataRequestViewController.h; sourceTree = "<group>"; };
+		04D72156156F94BB00099B8A /* DataRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataRequestViewController.m; sourceTree = "<group>"; };
 		04D7215D156F99F200099B8A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		04D7215F156F9C1D00099B8A /* StoreKISSDataRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreKISSDataRequestView.h; path = Views/StoreKISSDataRequestView.h; sourceTree = "<group>"; };
-		04D72160156F9C1D00099B8A /* StoreKISSDataRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreKISSDataRequestView.m; path = Views/StoreKISSDataRequestView.m; sourceTree = "<group>"; };
+		04D7215F156F9C1D00099B8A /* DataRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; name = DataRequestView.h; path = Views/DataRequestView.h; sourceTree = "<group>"; };
+		04D72160156F9C1D00099B8A /* DataRequestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataRequestView.m; path = Views/DataRequestView.m; sourceTree = "<group>"; };
 		04DAE596156E758A00B5AFC6 /* StoreKISS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreKISS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DAE59A156E758A00B5AFC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		04DAE59C156E758A00B5AFC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,10 +128,10 @@
 			children = (
 				04D72153156F94BB00099B8A /* RootViewController.h */,
 				04D72154156F94BB00099B8A /* RootViewController.m */,
-				04D72155156F94BB00099B8A /* StoreKISSDataRequestTestViewController.h */,
-				04D72156156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m */,
-				047EB7EC1573850300DDE51E /* StoreKISSPaymentRequestViewController.h */,
-				047EB7ED1573850300DDE51E /* StoreKISSPaymentRequestViewController.m */,
+				04D72155156F94BB00099B8A /* DataRequestViewController.h */,
+				04D72156156F94BB00099B8A /* DataRequestViewController.m */,
+				047EB7EC1573850300DDE51E /* PaymentRequestViewController.h */,
+				047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -141,10 +139,10 @@
 		04D72162156F9C2100099B8A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04D7215F156F9C1D00099B8A /* StoreKISSDataRequestView.h */,
-				04D72160156F9C1D00099B8A /* StoreKISSDataRequestView.m */,
-				047EB7F01573852A00DDE51E /* StoreKISSPaymentRequestView.h */,
-				047EB7F11573852A00DDE51E /* StoreKISSPaymentRequestView.m */,
+				04D7215F156F9C1D00099B8A /* DataRequestView.h */,
+				04D72160156F9C1D00099B8A /* DataRequestView.m */,
+				047EB7F01573852A00DDE51E /* PaymentRequestView.h */,
+				047EB7F11573852A00DDE51E /* PaymentRequestView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -367,11 +365,11 @@
 				04702C90156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */,
 				04702C9B156F904100EA9D2B /* StoreKISSShared.m in Sources */,
 				04D72157156F94BB00099B8A /* RootViewController.m in Sources */,
-				04D72158156F94BB00099B8A /* StoreKISSDataRequestTestViewController.m in Sources */,
-				04D72161156F9C1D00099B8A /* StoreKISSDataRequestView.m in Sources */,
+				04D72158156F94BB00099B8A /* DataRequestViewController.m in Sources */,
+				04D72161156F9C1D00099B8A /* DataRequestView.m in Sources */,
 				047EB7E9157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */,
-				047EB7EE1573850300DDE51E /* StoreKISSPaymentRequestViewController.m in Sources */,
-				047EB7F21573852A00DDE51E /* StoreKISSPaymentRequestView.m in Sources */,
+				047EB7EE1573850300DDE51E /* PaymentRequestViewController.m in Sources */,
+				047EB7F21573852A00DDE51E /* PaymentRequestView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,8 +381,6 @@
 				04702C9D156F90FD00EA9D2B /* StoreKISSDataRequest.m in Sources */,
 				04702C9E156F910200EA9D2B /* StoreKISS.m in Sources */,
 				047EB7EA157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */,
-				047EB7EF1573850300DDE51E /* StoreKISSPaymentRequestViewController.m in Sources */,
-				047EB7F31573852A00DDE51E /* StoreKISSPaymentRequestView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

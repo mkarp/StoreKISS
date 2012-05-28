@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Redigion. All rights reserved.
 //
 
-#import "StoreKISSDataRequestTestViewController.h"
-#import "StoreKISSDataRequestView.h"
+#import "DataRequestViewController.h"
+#import "DataRequestView.h"
 #import "StoreKISSDataRequest.h"
 
 NSString * const nonConsumableProductIdentifier1 = @"com.redigion.storekiss.nonconsumable1";
@@ -20,17 +20,17 @@ NSString * const notificationStatusNA = @"N/A";
 NSString * const notificationStatusSuccess = @"Success";
 NSString * const notificationStatusFailure = @"Failure";
 
-@interface StoreKISSDataRequestTestViewController ()
+@interface DataRequestViewController ()
 
-@property (unsafe_unretained, nonatomic) StoreKISSDataRequestView *requestView;
+@property (unsafe_unretained, nonatomic) DataRequestView *dataRequestView;
 @property (strong, nonatomic) StoreKISSDataRequest *request;
 
 @end
 
-@implementation StoreKISSDataRequestTestViewController
+@implementation DataRequestViewController
 
-@synthesize requestView,
-request;
+@synthesize dataRequestView,
+			request;
 
 - (void)dealloc
 {
@@ -83,8 +83,8 @@ request;
 {
 	[super loadView];
 	
-	self.view = [[StoreKISSDataRequestView alloc] init];
-	self.requestView = (StoreKISSDataRequestView *)self.view;
+	self.view = [[DataRequestView alloc] init];
+	self.dataRequestView = (DataRequestView *)self.view;
 }
 
 - (void)viewDidLoad
@@ -93,20 +93,20 @@ request;
 	
 	self.title = NSLocalizedString(NSStringFromClass([self class]), @"");
 	
-	[self.requestView.launchSingleButton
+	[self.dataRequestView.launchSingleButton
 	 addTarget:self
 	 action:@selector(launchButtonOnTouchUpInside:)
 	 forControlEvents:UIControlEventTouchUpInside];
 	
-	[self.requestView.launchBulkButton
+	[self.dataRequestView.launchBulkButton
 	 addTarget:self
 	 action:@selector(launchBulkButtonOnTouchUpInside:)
 	 forControlEvents:UIControlEventTouchUpInside];
 	
-	self.requestView.statusLabel.text = statusNA;
-	self.requestView.statusLabel.textColor = [UIColor blackColor];
+	self.dataRequestView.statusLabel.text = statusNA;
+	self.dataRequestView.statusLabel.textColor = [UIColor blackColor];
 	
-	self.requestView.notificationStatusLabel.text = notificationStatusNA;
+	self.dataRequestView.notificationStatusLabel.text = notificationStatusNA;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
@@ -118,8 +118,8 @@ request;
 
 - (void)launchButtonOnTouchUpInside:(id)sender
 {
-	self.requestView.statusLabel.text = statusExecuting;
-	self.requestView.statusLabel.textColor = [UIColor blackColor];
+	self.dataRequestView.statusLabel.text = statusExecuting;
+	self.dataRequestView.statusLabel.textColor = [UIColor blackColor];
 	
 	[self log:[NSString stringWithFormat:@"Requesting data for Product ID %@...", nonConsumableProductIdentifier1]];
 	
@@ -133,15 +133,15 @@ request;
 					   ((SKProduct *)[response.products objectAtIndex:0]).productIdentifier];
 		 }
 		 
-		 self.requestView.statusLabel.text = result;
-		 self.requestView.statusLabel.textColor = [UIColor greenColor];
+		 self.dataRequestView.statusLabel.text = result;
+		 self.dataRequestView.statusLabel.textColor = [UIColor greenColor];
 		 
 		 [self log:@"Finished with success"];
 		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
 		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
-		 self.requestView.statusLabel.text = statusFailure;
-		 self.requestView.statusLabel.textColor = [UIColor redColor];
+		 self.dataRequestView.statusLabel.text = statusFailure;
+		 self.dataRequestView.statusLabel.textColor = [UIColor redColor];
 		 
 		 [self log:@"Finished with error"];
 		 [self log:[NSString stringWithFormat:@"%@", error.localizedDescription]]; 
@@ -150,8 +150,8 @@ request;
 
 - (void)launchBulkButtonOnTouchUpInside:(id)sender
 {
-	self.requestView.statusLabel.text = statusExecuting;
-	self.requestView.statusLabel.textColor = [UIColor blackColor];
+	self.dataRequestView.statusLabel.text = statusExecuting;
+	self.dataRequestView.statusLabel.textColor = [UIColor blackColor];
 	
 	[self log:[NSString stringWithFormat:@"Requesting data for Product IDs...", nonConsumableProductIdentifier1]];
 	
@@ -169,15 +169,15 @@ request;
 					   ((SKProduct *)[response.products objectAtIndex:1]).productIdentifier];
 		 }
 		 
-		 self.requestView.statusLabel.text = result;
-		 self.requestView.statusLabel.textColor = [UIColor greenColor];
+		 self.dataRequestView.statusLabel.text = result;
+		 self.dataRequestView.statusLabel.textColor = [UIColor greenColor];
 		 
 		 [self log:@"Finished with success"];
 		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
 		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
-		 self.requestView.statusLabel.text = statusFailure;
-		 self.requestView.statusLabel.textColor = [UIColor redColor];
+		 self.dataRequestView.statusLabel.text = statusFailure;
+		 self.dataRequestView.statusLabel.textColor = [UIColor redColor];
 		 
 		 [self log:@"Finished with error"];
 		 [self log:[NSString stringWithFormat:@"%@", error.localizedDescription]]; 
@@ -186,13 +186,13 @@ request;
 
 - (void)didReceiveDataRequestNotification:(NSNotification *)notification
 {
-	self.requestView.notificationStatusLabel.text = notification.name;
+	self.dataRequestView.notificationStatusLabel.text = notification.name;
 	if ([notification.name isEqualToString:StoreKISSNotificationDataRequestSuccess]) {
-		self.requestView.notificationStatusLabel.textColor = [UIColor greenColor];
+		self.dataRequestView.notificationStatusLabel.textColor = [UIColor greenColor];
 	} else if ([notification.name isEqualToString:StoreKISSNotificationDataRequestFailure]) {
-		self.requestView.notificationStatusLabel.textColor = [UIColor redColor];
+		self.dataRequestView.notificationStatusLabel.textColor = [UIColor redColor];
 	} else {
-		self.requestView.notificationStatusLabel.textColor = [UIColor blackColor];
+		self.dataRequestView.notificationStatusLabel.textColor = [UIColor blackColor];
 	}
 }
 
@@ -200,7 +200,7 @@ request;
 
 - (void)log:(NSString *)message
 {
-	self.requestView.logTextView.text = [self.requestView.logTextView.text 
+	self.dataRequestView.logTextView.text = [self.dataRequestView.logTextView.text 
 										 stringByAppendingFormat:@"%@\r\n\r\n", message];
 }
 
