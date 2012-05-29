@@ -84,4 +84,11 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
 						 success:(PaymentRequestSuccessBlock)success
 						 failure:(PaymentRequestFailureBlock)failure;
 
+/**
+ Make payment with SKProduct. A shortcut to use with notifications.
+ 
+ @param skProduct SKProduct you've received from StoreKit's API.
+ */
+- (void)makePaymentWithSKProduct:(SKProduct *)skProduct;
+
 @end

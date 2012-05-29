@@ -96,6 +96,14 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 	[self start];
 }
 
+- (void)makePaymentWithSKProduct:(SKProduct *)skProduct
+{
+	[self
+	 makePaymentWithSKProduct:skProduct
+	 success:nil
+	 failure:nil];
+}
+
 #pragma mark - Execution control
 
 - (void)start
