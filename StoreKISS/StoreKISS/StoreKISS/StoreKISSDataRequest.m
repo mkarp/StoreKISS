@@ -84,6 +84,22 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 	[self start];
 }
 
+- (void)requestDataForItemWithProductId:(NSString *)productId
+{
+	[self
+	 requestDataForItemWithProductId:productId
+	 success:nil
+	 failure:nil];
+}
+
+- (void)requestDataForItemsWithProductIds:(NSSet *)productIds
+{
+	[self
+	 requestDataForItemsWithProductIds:productIds
+	 success:nil
+	 failure:nil];
+}
+
 #pragma mark - Execution control
 
 - (void)start

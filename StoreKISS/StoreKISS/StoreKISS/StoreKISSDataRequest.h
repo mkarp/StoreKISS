@@ -85,4 +85,18 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
 								  success:(StoreKISSDataRequestSuccessBlock)success
 								  failure:(StoreKISSDataRequestFailureBlock)failure;
 
+/**
+ Requests payment data from iTunesConnect for the item with a concrete Product ID. A shortcut to use with notifications.
+ 
+ @param productId Product ID of the item for which payment data is fetched.
+ */
+- (void)requestDataForItemWithProductId:(NSString *)productId;
+
+/**
+ Requests payment data from iTunesConnect for items with a set of Product IDs.
+ 
+ @param productIds Set of Product IDs of the items for which payment data is fetched.
+ */
+- (void)requestDataForItemsWithProductIds:(NSSet *)productIds;
+
 @end
