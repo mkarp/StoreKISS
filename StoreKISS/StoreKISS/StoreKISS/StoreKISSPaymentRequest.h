@@ -6,9 +6,6 @@
 //  Copyright (c) 2012 Redigion. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <StoreKit/StoreKit.h>
-#import <StoreKit/SKPaymentQueue.h>
 #import "StoreKISSShared.h"
 
 @class StoreKISSPaymentRequest;
