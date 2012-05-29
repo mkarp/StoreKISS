@@ -34,7 +34,7 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  - `requestDataForItemWithProductId:success:failure:` for a single product;
  - `requestDataForItemsWithProductIds:success:failure:` for a bulk request.
  
- As soon as request finishes either success or failure block will be called.
+ As soon as the request finishes either success or failure block will be called.
  
  Success block will be called with the request itself and `SKProductsResponse` object in the parameters.
  
@@ -44,9 +44,9 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  
  Here are notification types:
  
- - `StoreKISSNotificationDataRequestStarted` &mdash; data request started;
- - `StoreKISSNotificationDataRequestSuccess` &mdash; data request finished with success, the `SKProductsRespinse` object is contained in `userInfo` dictionary by `StoreKISSNotificationDataRequestSuccessResponseKey` key;
- - `StoreKISSNotificationDataRequestFailure` &mdash; data request finished with failure, the `NSError` object is contained in `userInfo` dictionary by `StoreKISSNotificationDataRequestFailureErrorKey` key.
+ - `StoreKISSNotificationDataRequestStarted` &mdash; request started;
+ - `StoreKISSNotificationDataRequestSuccess` &mdash; request finished with success, the `SKProductsResponse` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestSuccessResponseKey` key;
+ - `StoreKISSNotificationDataRequestFailure` &mdash; request finished with failure, the `NSError` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestFailureErrorKey` key.
  */
 @interface StoreKISSDataRequest : NSObject<SKProductsRequestDelegate>
 

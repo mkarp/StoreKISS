@@ -49,6 +49,13 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 	return self;
 }
 
+#pragma mark - Checking payment possibility
+
+- (BOOL)canMakePayments
+{
+	return [SKPaymentQueue canMakePayments];
+}
+
 #pragma mark - Making payment
 
 - (void)makePaymentWithSKProduct:(SKProduct *)skProduct
