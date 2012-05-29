@@ -7,16 +7,3 @@
 //
 
 #import "StoreKISS.h"
-
-//@implementation StoreKISS
-//
-//- (id)init
-//{
-//	self = [super init];
-//	if (self) {
-//		[[SKPaymentQueue defaultQueue] addTransactionObserver:self];
-//	}
-//	return self;
-//}
-//
-//@end
