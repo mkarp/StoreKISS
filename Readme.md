@@ -23,6 +23,8 @@ So you basically request price and then execute the payment. That simple.
 
 1. Import `StoreKISS.h` and start using.
 
+CocoaPods spec will be added soon.
+
 ##Usage examples
 
 Here are some examples for using `StoreKISSDataRequest`. The same can be applied for `StoreKISSPaymentRequest` as classes are almost identical.
