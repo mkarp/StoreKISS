@@ -20,8 +20,8 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 @property (strong, nonatomic) SKProductsRequest *request;
 @property (strong, nonatomic) SKProductsResponse *response;
 @property (strong, nonatomic) NSError *error;
-@property (copy, nonatomic) DataRequestSuccessBlock success;
-@property (copy, nonatomic) DataRequestFailureBlock failure;
+@property (copy, nonatomic) StoreKISSDataRequestSuccessBlock success;
+@property (copy, nonatomic) StoreKISSDataRequestFailureBlock failure;
 
 @end
 
@@ -46,8 +46,8 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 #pragma mark - Requesting data
 
 - (void)requestDataForItemWithProductId:(NSString *)productId
-								success:(DataRequestSuccessBlock)successBlock
-								failure:(DataRequestFailureBlock)failureBlock
+								success:(StoreKISSDataRequestSuccessBlock)successBlock
+								failure:(StoreKISSDataRequestFailureBlock)failureBlock
 {
 	[self
 	 requestDataForItemsWithProductIds:[NSSet setWithObject:productId]
@@ -56,8 +56,8 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 }
 
 - (void)requestDataForItemsWithProductIds:(NSSet *)productIds
-								  success:(DataRequestSuccessBlock)successBlock 
-								  failure:(DataRequestFailureBlock)failureBlock
+								  success:(StoreKISSDataRequestSuccessBlock)successBlock 
+								  failure:(StoreKISSDataRequestFailureBlock)failureBlock
 {
 	if ([self isExecuting]) {
 		return;

@@ -16,38 +16,37 @@ typedef enum {
 	StoreKISSDataRequestStatusFinished
 } StoreKISSDataRequestStatus;
 
-typedef void (^DataRequestSuccessBlock)(StoreKISSDataRequest *request, SKProductsResponse *response);
-typedef void (^DataRequestFailureBlock)(NSError *error);
+typedef void (^StoreKISSDataRequestSuccessBlock)(StoreKISSDataRequest *request,
+												 SKProductsResponse *response);
+typedef void (^StoreKISSDataRequestFailureBlock)(NSError *error);
 
-/**
- Notification that a certain data request did start.
- */
 extern NSString * const StoreKISSNotificationDataRequestStarted;
-
-/**
- Notification identifier that a certain data request did finish with success.
- Notification will contain SKProductsResponse in userInfo.
- */
 extern NSString * const StoreKISSNotificationDataRequestSuccess;
-
-/**
- Key for SKProductsResponse in userInfo of the StoreKISSNotificationDataRequestSuccess notification.
- */
 extern NSString * const StoreKISSNotificationDataRequestSuccessResponseKey;
-
-/**
- Notification identifier that a certain data request did finish with failure.
- Notification will contain error in userInfo.
- */
 extern NSString * const StoreKISSNotificationDataRequestFailure;
-
-/**
- Key for error in userInfo of the StoreKISSNotificationDataRequestFailure notification.
- */
 extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
 
 /**
  Class for fetching payment data from iTunesConnect using Product IDs.
+ 
+ There are two methods to accomplish that:
+ 
+ - `requestDataForItemWithProductId:success:failure:` for a single product;
+ - `requestDataForItemsWithProductIds:success:failure:` for a bulk request.
+ 
+ As soon as request finishes either success or failure block will be called.
+ 
+ Success block will be called with the request itself and `SKProductsResponse` object in the parameters.
+ 
+ Failure block will contain only the `NSError` object in the parameters.
+ 
+ You can also track request execution using notifications. Each notification is a `NSNotification` instance and you can get the `StoreKISSDataRequest` object by accessing its `- object` property.
+ 
+ Here are notification types:
+ 
+ - `StoreKISSNotificationDataRequestStarted` &mdash; data request started;
+ - `StoreKISSNotificationDataRequestSuccess` &mdash; data request finished with success, the `SKProductsRespinse` object is contained in `userInfo` dictionary by `StoreKISSNotificationDataRequestSuccessResponseKey` key;
+ - `StoreKISSNotificationDataRequestFailure` &mdash; data request finished with failure, the `NSError` object is contained in `userInfo` dictionary by `StoreKISSNotificationDataRequestFailureErrorKey` key.
  */
 @interface StoreKISSDataRequest : NSObject<SKProductsRequestDelegate>
 
@@ -72,8 +71,8 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  @param failure Failure block.
  */
 - (void)requestDataForItemWithProductId:(NSString *)productId
-								success:(DataRequestSuccessBlock)success
-								failure:(DataRequestFailureBlock)failure;
+								success:(StoreKISSDataRequestSuccessBlock)success
+								failure:(StoreKISSDataRequestFailureBlock)failure;
 
 /**
  Requests payment data from iTunesConnect for items with a set of Product IDs.
@@ -83,7 +82,7 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  @param failure Failure block.
  */
 - (void)requestDataForItemsWithProductIds:(NSSet *)productIds
-								  success:(DataRequestSuccessBlock)success
-								  failure:(DataRequestFailureBlock)failure;
+								  success:(StoreKISSDataRequestSuccessBlock)success
+								  failure:(StoreKISSDataRequestFailureBlock)failure;
 
 @end
