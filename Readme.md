@@ -10,8 +10,8 @@ Uses ARC.
 
 There are two request types:
 
-- data request for getting payment data (price and stuff);
-- payment request for making payment.
+- data request (`StoreKISSDataRequest`) for getting payment data (price and stuff);
+- payment request (`StoreKISSPaymentRequest`) for making payment.
 
 So you basically request price and then execute the payment. That simple.
 
@@ -24,6 +24,8 @@ So you basically request price and then execute the payment. That simple.
 1. Import `StoreKISS.h` and start using.
 
 ##Usage examples
+
+Here are some examples for using `StoreKISSDataRequest`. The same can be applied for `StoreKISSPaymentRequest` as classes are almost identical.
 
 ###Requesting data using blocks
 
@@ -69,8 +71,10 @@ So you basically request price and then execute the payment. That simple.
 		 name:StoreKISSNotificationDataRequestSuccess
 		 object:nil];
 		…
-		
-The same is for `StoreKISSPaymentRequest`.
+
+##Documentation
+
+Documentation for the project is built with [appledoc](http://gentlebytes.com/appledoc/). You can install it in Xcode via `make doc-install`. Be sure that appledoc is installed.
 
 ##Support
 
