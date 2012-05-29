@@ -66,6 +66,17 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 		return;
 	}
 	
+	if ([self canMakePayments]) {
+		self.error = [NSError
+					  errorWithDomain:StoreKISSErrorDomain
+					  code:0
+					  userInfo:[NSDictionary
+								dictionaryWithObject:@"User is not allowed to authorize payment."
+								forKey:NSLocalizedDescriptionKey]];
+		[self finish];
+		return;
+	}
+	
 	if (skProduct == nil) {
 		self.error = [NSError
 					  errorWithDomain:StoreKISSErrorDomain

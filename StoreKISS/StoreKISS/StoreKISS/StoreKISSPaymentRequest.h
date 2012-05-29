@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <StoreKit/StoreKit.h>
+#import <StoreKit/SKPaymentQueue.h>
 #import "StoreKISSShared.h"
 
 @class StoreKISSPaymentRequest;
@@ -65,6 +67,8 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
 
 /**
  Check whether payment execution is possible.
+ 
+ For more information see `SKPaymentQueue` `-canMakePayments` method documentation.
  */
 - (BOOL)canMakePayments;
 
