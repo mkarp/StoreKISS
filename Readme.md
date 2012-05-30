@@ -81,3 +81,7 @@ Documentation for the project is built with [appledoc](http://gentlebytes.com/ap
 ##Support
 
 Feel free to open an issue on github or email me at [karpenko.misha@gmail.com](mailto:karpenko.misha@gmail.com).
+
+##License
+
+StoreKISS is available under the MIT license. See the License.md file for more info.
