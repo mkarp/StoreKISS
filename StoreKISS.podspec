@@ -9,5 +9,6 @@ Pod::Spec.new do |s|
   s.source_files = 'StoreKISS/StoreKISS/StoreKISS/StoreKISS'
   s.clean_paths = []
   s.framework = 'StoreKit'
+  s.requires_arc = true
   s.dependency 'Reachability'
 end
