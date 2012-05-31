@@ -129,20 +129,20 @@ NSString * const dataRequestNotificationStatusFailure = @"Failure";
 	
 	[self.request
 	 requestDataForItemWithProductId:dataRequestNonConsumableProductId1
-	 success:^(StoreKISSDataRequest *request,
-			   SKProductsResponse *response) {
+	 success:^(StoreKISSDataRequest *currentRequest) {
 		 NSString *result = dataRequestStatusSuccess;
-		 if (response.products.count == 1) {
+		 if (currentRequest.response.products.count == 1) {
 			 result = [result stringByAppendingFormat:@" %@",
-					   ((SKProduct *)[response.products objectAtIndex:0]).productIdentifier];
+					   [((SKProduct *)[currentRequest.response.products
+									  objectAtIndex:0]) productIdentifier]];
 		 }
 		 
 		 self.dataRequestView.statusLabel.text = result;
 		 self.dataRequestView.statusLabel.textColor = [UIColor greenColor];
 		 
 		 [self log:@"Finished with success"];
-		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
-		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
+		 [self log:[NSString stringWithFormat:@"Products %@", currentRequest.response.products]];
+		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", currentRequest.response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
 		 self.dataRequestView.statusLabel.text = dataRequestStatusFailure;
 		 self.dataRequestView.statusLabel.textColor = [UIColor redColor];
@@ -164,21 +164,20 @@ NSString * const dataRequestNotificationStatusFailure = @"Failure";
 										dataRequestNonConsumableProductId1, 
 										dataRequestNonConsumableProductId2, 
 										nil]
-	 success:^(StoreKISSDataRequest *request,
-			   SKProductsResponse *response) {
+	 success:^(StoreKISSDataRequest *currentRequest) {
 		 NSString *result = dataRequestStatusSuccess;
-		 if (response.products.count == 2) {
+		 if (currentRequest.response.products.count == 2) {
 			 result = [result stringByAppendingFormat:@" %@ %@",
-					   ((SKProduct *)[response.products objectAtIndex:0]).productIdentifier,
-					   ((SKProduct *)[response.products objectAtIndex:1]).productIdentifier];
+					   ((SKProduct *)[currentRequest.response.products objectAtIndex:0]).productIdentifier,
+					   ((SKProduct *)[currentRequest.response.products objectAtIndex:1]).productIdentifier];
 		 }
 		 
 		 self.dataRequestView.statusLabel.text = result;
 		 self.dataRequestView.statusLabel.textColor = [UIColor greenColor];
 		 
 		 [self log:@"Finished with success"];
-		 [self log:[NSString stringWithFormat:@"Products %@", response.products]];
-		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", response.invalidProductIdentifiers]];
+		 [self log:[NSString stringWithFormat:@"Products %@", currentRequest.response.products]];
+		 [self log:[NSString stringWithFormat:@"InvalidProductIdentifiers %@", currentRequest.response.invalidProductIdentifiers]];
 	 } failure:^(NSError *error) {
 		 self.dataRequestView.statusLabel.text = dataRequestStatusFailure;
 		 self.dataRequestView.statusLabel.textColor = [UIColor redColor];
