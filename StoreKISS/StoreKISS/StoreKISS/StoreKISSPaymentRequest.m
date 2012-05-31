@@ -25,8 +25,8 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 @implementation StoreKISSPaymentRequest
 
 @synthesize status,
-			payment,
-			transaction,
+			skPayment,
+			skTransaction,
 			error;
 @synthesize success,
 			failure;
@@ -85,7 +85,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 		return;
 	}
 
-	self.payment = [SKPayment paymentWithProduct:skProduct];
+	self.skPayment = [SKPayment paymentWithProduct:skProduct];
 	
 	self.success = successBlock;
 	self.failure = failureBlock;
@@ -105,7 +105,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 
 - (void)start
 {
-	[[SKPaymentQueue defaultQueue] addPayment:self.payment];
+	[[SKPaymentQueue defaultQueue] addPayment:self.skPayment];
 	
 	self.status = StoreKISSPaymentRequestStatusStarted;
 	[[NSNotificationCenter defaultCenter]
@@ -117,12 +117,12 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 {
 	self.status = StoreKISSPaymentRequestStatusFinished;
 
-	if ( ! self.error && self.transaction) {
+	if ( ! self.error && self.skTransaction) {
 		[[NSNotificationCenter defaultCenter]
 		 postNotificationName:StoreKISSNotificationPaymentRequestSuccess
 		 object:self
 		 userInfo:[NSDictionary
-				   dictionaryWithObject:self.transaction
+				   dictionaryWithObject:self.skTransaction
 				   forKey:StoreKISSNotificationPaymentRequestSuccessTransactionKey]];
 
 		if (self.success) {
@@ -141,7 +141,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 		}
 	}
 	
-	[[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+	[[SKPaymentQueue defaultQueue] finishTransaction:skTransaction];
 }
 
 - (BOOL)isExecuting
@@ -155,22 +155,22 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 {
 	// Find transaction with our payment
 	for (SKPaymentTransaction *updatedTransaction in transactions) {
-		if ([updatedTransaction.payment isEqual:self.payment]) {
-			self.transaction = updatedTransaction;
+		if ([updatedTransaction.payment isEqual:self.skPayment]) {
+			self.skTransaction = updatedTransaction;
 		}
 	}
 	
-	if ( ! self.transaction) {
+	if ( ! self.skTransaction) {
 		return;
 	}
 	
-	switch (transaction.transactionState) {
+	switch (self.skTransaction.transactionState) {
 		case SKPaymentTransactionStatePurchasing:
 			[[NSNotificationCenter defaultCenter]
 			 postNotificationName:StoreKISSNotificationPaymentRequestPurchasing
 			 object:self
 			 userInfo:[NSDictionary
-					   dictionaryWithObject:self.transaction
+					   dictionaryWithObject:self.skTransaction
 					   forKey:StoreKISSNotificationPaymentRequestSuccessTransactionKey]];
 			break;
 	
@@ -183,7 +183,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 			break;
 			
 		case SKPaymentTransactionStateFailed:
-			self.error = transaction.error;
+			self.error = self.skTransaction.error;
 			[self finish];
 			break;
 	}

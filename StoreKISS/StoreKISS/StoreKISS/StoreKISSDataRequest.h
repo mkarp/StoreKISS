@@ -62,13 +62,13 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  StoreKIT's SKProductsRequest object.
  Will be nil before the start of request.
  */
-@property (strong, nonatomic) SKProductsRequest *request;
+@property (strong, nonatomic) SKProductsRequest *skRequest;
 
 /**
  StoreKIT's SKProductsResponse object.
  Will be nil until request is successfully finished.
  */
-@property (strong, nonatomic) SKProductsResponse *response;
+@property (strong, nonatomic) SKProductsResponse *skResponse;
 
 /**
  Error if failed.

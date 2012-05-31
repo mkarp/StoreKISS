@@ -144,7 +144,7 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 	[self.dataRequest
 	 requestDataForItemWithProductId:paymentRequestNonConsumableProductId1
 	 success:^(StoreKISSDataRequest *currentRequest) {
-		 if (currentRequest.response.products.count != 1) {
+		 if (currentRequest.skResponse.products.count != 1) {
 			 NSError *error = [NSError
 							   errorWithDomain:nil
 							   code:0
@@ -155,7 +155,7 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 			 return;
 		 }
 	 
-		 self.skProduct = [currentRequest.response.products objectAtIndex:0];
+		 self.skProduct = [currentRequest.skResponse.products objectAtIndex:0];
 		 [self log:[NSString stringWithFormat:@"Received data for %@...", self.skProduct.productIdentifier]];
 		 [self log:[NSString stringWithFormat:@"Trying to buy %@...", self.skProduct.productIdentifier]];
 	 

@@ -25,8 +25,8 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 @implementation StoreKISSDataRequest
 
 @synthesize status;
-@synthesize request,
-			response,
+@synthesize skRequest,
+			skResponse,
 			error,
 			success,
 			failure;
@@ -74,9 +74,9 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 		return;
 	}
 	
-	self.request = [[SKProductsRequest alloc]
-					initWithProductIdentifiers:productIds];
-	self.request.delegate = self;
+	self.skRequest = [[SKProductsRequest alloc]
+					  initWithProductIdentifiers:productIds];
+	self.skRequest.delegate = self;
 	
 	[self start];
 }
@@ -101,7 +101,7 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 
 - (void)start
 {
-	[self.request start];
+	[self.skRequest start];
 
 	self.status = StoreKISSDataRequestStatusStarted;
 	[[NSNotificationCenter defaultCenter]
@@ -113,12 +113,12 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 {
 	self.status = StoreKISSDataRequestStatusFinished;
 	
-	if ( ! self.error && self.response) {
+	if ( ! self.error && self.skResponse) {
 		[[NSNotificationCenter defaultCenter]
 		 postNotificationName:StoreKISSNotificationDataRequestSuccess
 		 object:self
 		 userInfo:[NSDictionary
-				   dictionaryWithObject:self.response
+				   dictionaryWithObject:self.skResponse
 				   forKey:StoreKISSNotificationDataRequestSuccessResponseKey]];
 		
 		if (self.success) {
@@ -148,7 +148,7 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 - (void)productsRequest:(SKProductsRequest *)request
 	 didReceiveResponse:(SKProductsResponse *)receivedResponse
 {
-	self.response = receivedResponse;
+	self.skResponse = receivedResponse;
 	[self finish];
 }
 

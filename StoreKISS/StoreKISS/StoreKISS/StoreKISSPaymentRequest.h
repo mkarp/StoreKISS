@@ -61,13 +61,13 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
  Payment which will be sent to Apple.
  Will be nil before the request is started.
  */
-@property (strong, nonatomic) SKPayment *payment;
+@property (strong, nonatomic) SKPayment *skPayment;
 
 /**
  Received transaction.
  Will be nil until request is finished.
  */
-@property (strong, nonatomic) SKPaymentTransaction *transaction;
+@property (strong, nonatomic) SKPaymentTransaction *skTransaction;
 
 /**
  Error if failed.
