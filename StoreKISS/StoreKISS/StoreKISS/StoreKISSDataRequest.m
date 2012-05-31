@@ -17,9 +17,6 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 
 @interface StoreKISSDataRequest ()
 
-@property (strong, nonatomic) SKProductsRequest *request;
-@property (strong, nonatomic) SKProductsResponse *response;
-@property (strong, nonatomic) NSError *error;
 @property (copy, nonatomic) StoreKISSDataRequestSuccessBlock success;
 @property (copy, nonatomic) StoreKISSDataRequestFailureBlock failure;
 
@@ -125,7 +122,7 @@ NSString * const StoreKISSNotificationDataRequestFailureErrorKey = @"com.redigio
 				   forKey:StoreKISSNotificationDataRequestSuccessResponseKey]];
 		
 		if (self.success) {
-			self.success(self, self.response);
+			self.success(self);
 		}
 	} else {
 		[[NSNotificationCenter defaultCenter]

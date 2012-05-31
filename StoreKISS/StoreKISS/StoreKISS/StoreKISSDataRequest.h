@@ -16,8 +16,7 @@ typedef enum {
 	StoreKISSDataRequestStatusFinished
 } StoreKISSDataRequestStatus;
 
-typedef void (^StoreKISSDataRequestSuccessBlock)(StoreKISSDataRequest *request,
-												 SKProductsResponse *response);
+typedef void (^StoreKISSDataRequestSuccessBlock)(StoreKISSDataRequest *request);
 typedef void (^StoreKISSDataRequestFailureBlock)(NSError *error);
 
 extern NSString * const StoreKISSNotificationDataRequestStarted;
@@ -58,6 +57,23 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  Status of the request.
  */
 @property (nonatomic) StoreKISSDataRequestStatus status;
+
+/**
+ StoreKIT's SKProductsRequest object.
+ Will be nil before the start of request.
+ */
+@property (strong, nonatomic) SKProductsRequest *request;
+
+/**
+ StoreKIT's SKProductsResponse object.
+ Will be nil until request is successfully finished.
+ */
+@property (strong, nonatomic) SKProductsResponse *response;
+
+/**
+ Error if failed.
+ */
+@property (strong, nonatomic) NSError *error;
 
 ///----------------------
 /// @name Requesting data

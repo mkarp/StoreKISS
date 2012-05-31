@@ -16,8 +16,7 @@ typedef enum {
 	StoreKISSPaymentRequestStatusFinished
 } StoreKISSPaymentRequestStatus;
 
-typedef void (^PaymentRequestSuccessBlock)(StoreKISSPaymentRequest *request,
-										   SKPaymentTransaction *transaction);
+typedef void (^PaymentRequestSuccessBlock)(StoreKISSPaymentRequest *request);
 typedef void (^PaymentRequestFailureBlock)(NSError *error);
 
 extern NSString * const StoreKISSNotificationPaymentRequestStarted;
@@ -57,6 +56,23 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
  Status of the request.
  */
 @property (nonatomic) StoreKISSPaymentRequestStatus status;
+
+/**
+ Payment which will be sent to Apple.
+ Will be nil before the request is started.
+ */
+@property (strong, nonatomic) SKPayment *payment;
+
+/**
+ Received transaction.
+ Will be nil until request is finished.
+ */
+@property (strong, nonatomic) SKPaymentTransaction *transaction;
+
+/**
+ Error if failed.
+ */
+@property (strong, nonatomic) NSError *error;
 
 ///-----------------------------------
 /// @name Checking payment possibility

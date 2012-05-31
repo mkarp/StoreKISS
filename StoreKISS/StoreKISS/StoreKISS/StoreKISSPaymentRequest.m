@@ -17,9 +17,6 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 
 @interface StoreKISSPaymentRequest ()
 
-@property (strong, nonatomic) SKPayment *payment;
-@property (strong, nonatomic) SKPaymentTransaction *transaction;
-@property (strong, nonatomic) NSError *error;
 @property (copy, nonatomic) PaymentRequestSuccessBlock success;
 @property (copy, nonatomic) PaymentRequestFailureBlock failure;
 
@@ -27,11 +24,11 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 
 @implementation StoreKISSPaymentRequest
 
-@synthesize status;
-@synthesize payment,
+@synthesize status,
+			payment,
 			transaction,
-			error,
-			success,
+			error;
+@synthesize success,
 			failure;
 
 - (void)dealloc
@@ -66,7 +63,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 		return;
 	}
 	
-	if ([self canMakePayments]) {
+	if ( ! [self canMakePayments]) {
 		self.error = [NSError
 					  errorWithDomain:StoreKISSErrorDomain
 					  code:0
@@ -109,7 +106,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 - (void)start
 {
 	[[SKPaymentQueue defaultQueue] addPayment:self.payment];
-
+	
 	self.status = StoreKISSPaymentRequestStatusStarted;
 	[[NSNotificationCenter defaultCenter]
 	 postNotificationName:StoreKISSNotificationPaymentRequestStarted
@@ -129,7 +126,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 				   forKey:StoreKISSNotificationPaymentRequestSuccessTransactionKey]];
 
 		if (self.success) {
-			self.success(self, self.transaction);
+			self.success(self);
 		}
 	} else {
 		[[NSNotificationCenter defaultCenter]
