@@ -1,6 +1,6 @@
 #StoreKISS
 
-Lightweight wrapper for Apple's StoreKit framework created with KISS concept and love ❤.
+Lightweight wrapper for Apple's StoreKit framework created with KISS and love.
 
 Only for Non-consumable products now. Everything else coming later.
 
