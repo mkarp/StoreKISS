@@ -6,7 +6,7 @@ Only for Non-consumable products now. Everything else coming later.
 
 Uses ARC.
 
-##Main idea
+##Main concept
 
 There are two request types:
 
@@ -75,7 +75,7 @@ Here are some examples for using `StoreKISSDataRequest`. The same can be applied
 
 ##Documentation
 
-Documentation for the project is built with [appledoc](http://gentlebytes.com/appledoc/). You can install it in Xcode via `make doc-install`. Be sure that appledoc is installed.
+Documentation for the project is built with [appledoc](http://gentlebytes.com/appledoc/). You can install it in Xcode via `make doc-install`. Make sure appledoc is installed.
 
 ##Support
 
