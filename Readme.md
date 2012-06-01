@@ -92,4 +92,4 @@ Feel free to open an issue on github or email me at [karpenko.misha@gmail.com](m
 
 ##License
 
-StoreKISS is available under the MIT license. See the License.md file for more info.
+StoreKISS is available under the MIT license. See the License.txt file for more info.
