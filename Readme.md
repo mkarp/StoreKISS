@@ -31,14 +31,16 @@ Here are some examples for using `StoreKISSDataRequest`. The same can be applied
 
 ###Requesting data using blocks
 
-	StoreKISSDataRequest *dataRequest = [[StoreKISSDataRequest alloc] init];
-	[dataRequest
-	 requestDataForItemWithProductId:@"com.example.myProduct"
-	 success:^(StoreKISSDataRequest *dataRequest) {
-         NSLog(@"Received payment data.")
-	 } failure:^(NSError *error) {
-         NSLog(@"Houston, we have a problem: %@"), error.localizedDescription); 
-	 }];
+```objc
+StoreKISSDataRequest *dataRequest = [[StoreKISSDataRequest alloc] init];
+[dataRequest
+ requestDataForItemWithProductId:@"com.example.myProduct"
+ success:^(StoreKISSDataRequest *dataRequest) {
+        NSLog(@"Received payment data.")
+ } failure:^(NSError *error) {
+        NSLog(@"Houston, we have a problem: %@"), error.localizedDescription); 
+ }];
+ ```
 	 
 ###Requesting data using notifications
 
