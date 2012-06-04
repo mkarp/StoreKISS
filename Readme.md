@@ -32,8 +32,6 @@ StoreKISS spec will be added to the main spec repository soon, we're right now g
 
 ##Usage examples
 
-Here are some examples for using `StoreKISSDataRequest`. The same can be applied for `StoreKISSPaymentRequest` as classes are almost identical.
-
 ###Requesting data using blocks
 
 ```objc
