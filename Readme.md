@@ -99,7 +99,7 @@ StoreKISSPaymentRequest *paymentRequest = [[StoreKISSPaymentRequest alloc] init]
  makePaymentWithSKProduct:skProduct
  success:^(StoreKISSPaymentRequest *paymentRequest) {
 	NSLog(@"Product was bought successfully.");
-	NSLog(@"Transaction ID %@", paymentRequest.transaction.transactionIdentifier);
+	NSLog(@"Transaction ID %@", paymentRequest.skTransaction.transactionIdentifier);
  } failure:^(NSError *error) {
 	NSLog(@"Houston, we have a problem: %@"), error.localizedDescription); 
  }];
