@@ -2,6 +2,8 @@
 
 Lightweight wrapper for Apple's StoreKit framework created with KISS concept and love ❤.
 
+**Attention!** Project is under early development, use for your own risk.
+
 Only for Non-consumable products now. Everything else coming later.
 
 Uses ARC.
