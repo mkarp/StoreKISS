@@ -157,7 +157,15 @@ Nevertheless before every new feature is commited UIAutomation Tests are run to 
 
 ##Documentation
 
-Documentation for the project is built with [appledoc](http://gentlebytes.com/appledoc/). You can install it in Xcode via `make doc-install`. Make sure [appledoc is installed](https://github.com/tomaz/appledoc#quick-install).
+Documentation for the project is built with [appledoc](http://gentlebytes.com/appledoc/). You can install it to Xcode via running `make doc-install` in Terminal:
+
+```
+git checkout https://github.com/mishakarpenko/StoreKISS.git
+cd StoreKISS
+make doc-install
+```
+
+Make sure [appledoc is installed](https://github.com/tomaz/appledoc#quick-install).
 
 ##Support
 
