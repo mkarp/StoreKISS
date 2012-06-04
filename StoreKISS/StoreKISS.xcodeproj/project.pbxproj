@@ -7,15 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04702C90156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */; };
+		040DF27F157CDDA300DF9F38 /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF278157CDDA300DF9F38 /* StoreKISS.m */; };
+		040DF280157CDDA300DF9F38 /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF27A157CDDA300DF9F38 /* StoreKISSDataRequest.m */; };
+		040DF281157CDDA300DF9F38 /* StoreKISSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF27C157CDDA300DF9F38 /* StoreKISSPaymentRequest.m */; };
+		040DF282157CDDA300DF9F38 /* StoreKISSShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */; };
 		04702C94156E7D9D00EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
 		04702C95156E7E0300EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
-		04702C9B156F904100EA9D2B /* StoreKISSShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C9A156F904100EA9D2B /* StoreKISSShared.m */; };
-		04702C9C156F904100EA9D2B /* StoreKISSShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C9A156F904100EA9D2B /* StoreKISSShared.m */; };
-		04702C9D156F90FD00EA9D2B /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */; };
-		04702C9E156F910200EA9D2B /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
-		047EB7E9157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7E8157380C800DDE51E /* StoreKISSPaymentRequest.m */; };
-		047EB7EA157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7E8157380C800DDE51E /* StoreKISSPaymentRequest.m */; };
 		047EB7EE1573850300DDE51E /* PaymentRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */; };
 		047EB7F21573852A00DDE51E /* PaymentRequestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7F11573852A00DDE51E /* PaymentRequestView.m */; };
 		04D72157156F94BB00099B8A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D72154156F94BB00099B8A /* RootViewController.m */; };
@@ -32,7 +29,6 @@
 		04DAE5B4156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
 		04DAE5B5156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
 		04DAE5BD156E758B00B5AFC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04DAE5BB156E758B00B5AFC6 /* InfoPlist.strings */; };
-		04DAE5CC156E75CE00B5AFC6 /* StoreKISS.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */; };
 		208AFBCC015C47BAAF74E55B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08AB829B87C406C9D48B587 /* libPods.a */; };
 		81659FCA797B4798959B3035 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08AB829B87C406C9D48B587 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -48,13 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		04702C8E156E7B0D00EA9D2B /* StoreKISSDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequest.h; sourceTree = "<group>"; };
-		04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequest.m; sourceTree = "<group>"; };
+		040DF277157CDDA300DF9F38 /* StoreKISS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISS.h; sourceTree = "<group>"; };
+		040DF278157CDDA300DF9F38 /* StoreKISS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISS.m; sourceTree = "<group>"; };
+		040DF279157CDDA300DF9F38 /* StoreKISSDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSDataRequest.h; sourceTree = "<group>"; };
+		040DF27A157CDDA300DF9F38 /* StoreKISSDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSDataRequest.m; sourceTree = "<group>"; };
+		040DF27B157CDDA300DF9F38 /* StoreKISSPaymentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSPaymentRequest.h; sourceTree = "<group>"; };
+		040DF27C157CDDA300DF9F38 /* StoreKISSPaymentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSPaymentRequest.m; sourceTree = "<group>"; };
+		040DF27D157CDDA300DF9F38 /* StoreKISSShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSShared.h; sourceTree = "<group>"; };
+		040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSShared.m; sourceTree = "<group>"; };
 		04702C93156E7D9D00EA9D2B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		04702C99156F904100EA9D2B /* StoreKISSShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSShared.h; sourceTree = "<group>"; };
-		04702C9A156F904100EA9D2B /* StoreKISSShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSShared.m; sourceTree = "<group>"; };
-		047EB7E7157380C800DDE51E /* StoreKISSPaymentRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSPaymentRequest.h; sourceTree = "<group>"; };
-		047EB7E8157380C800DDE51E /* StoreKISSPaymentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSPaymentRequest.m; sourceTree = "<group>"; };
 		047EB7EC1573850300DDE51E /* PaymentRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentRequestViewController.h; sourceTree = "<group>"; };
 		047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentRequestViewController.m; sourceTree = "<group>"; };
 		047EB7F01573852A00DDE51E /* PaymentRequestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PaymentRequestView.h; path = Views/PaymentRequestView.h; sourceTree = "<group>"; };
@@ -80,8 +78,6 @@
 		04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		04DAE5BA156E758B00B5AFC6 /* StoreKISSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreKISSTests-Info.plist"; sourceTree = "<group>"; };
 		04DAE5BC156E758B00B5AFC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		04DAE5CA156E75CE00B5AFC6 /* StoreKISS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISS.h; sourceTree = "<group>"; };
-		04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISS.m; sourceTree = "<group>"; };
 		47E8E0D67DFB44378F3A6F89 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		E08AB829B87C406C9D48B587 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -114,6 +110,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040DF276157CDDA300DF9F38 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				040DF277157CDDA300DF9F38 /* StoreKISS.h */,
+				040DF278157CDDA300DF9F38 /* StoreKISS.m */,
+				040DF279157CDDA300DF9F38 /* StoreKISSDataRequest.h */,
+				040DF27A157CDDA300DF9F38 /* StoreKISSDataRequest.m */,
+				040DF27B157CDDA300DF9F38 /* StoreKISSPaymentRequest.h */,
+				040DF27C157CDDA300DF9F38 /* StoreKISSPaymentRequest.m */,
+				040DF27D157CDDA300DF9F38 /* StoreKISSShared.h */,
+				040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		04D72151156F94BB00099B8A /* Testing */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +194,7 @@
 		04DAE5A0156E758A00B5AFC6 /* StoreKISS */ = {
 			isa = PBXGroup;
 			children = (
-				04DAE5C9156E75CE00B5AFC6 /* StoreKISS */,
+				040DF276157CDDA300DF9F38 /* Classes */,
 				04D72151156F94BB00099B8A /* Testing */,
 				04DAE5A9156E758A00B5AFC6 /* AppDelegate.h */,
 				04DAE5AA156E758A00B5AFC6 /* AppDelegate.m */,
@@ -219,21 +230,6 @@
 				04DAE5BB156E758B00B5AFC6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		04DAE5C9156E75CE00B5AFC6 /* StoreKISS */ = {
-			isa = PBXGroup;
-			children = (
-				04DAE5CA156E75CE00B5AFC6 /* StoreKISS.h */,
-				04DAE5CB156E75CE00B5AFC6 /* StoreKISS.m */,
-				04702C99156F904100EA9D2B /* StoreKISSShared.h */,
-				04702C9A156F904100EA9D2B /* StoreKISSShared.m */,
-				04702C8E156E7B0D00EA9D2B /* StoreKISSDataRequest.h */,
-				04702C8F156E7B0D00EA9D2B /* StoreKISSDataRequest.m */,
-				047EB7E7157380C800DDE51E /* StoreKISSPaymentRequest.h */,
-				047EB7E8157380C800DDE51E /* StoreKISSPaymentRequest.m */,
-			);
-			path = StoreKISS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,15 +357,15 @@
 			files = (
 				04DAE5A7156E758A00B5AFC6 /* main.m in Sources */,
 				04DAE5AB156E758A00B5AFC6 /* AppDelegate.m in Sources */,
-				04DAE5CC156E75CE00B5AFC6 /* StoreKISS.m in Sources */,
-				04702C90156E7B0D00EA9D2B /* StoreKISSDataRequest.m in Sources */,
-				04702C9B156F904100EA9D2B /* StoreKISSShared.m in Sources */,
 				04D72157156F94BB00099B8A /* RootViewController.m in Sources */,
 				04D72158156F94BB00099B8A /* DataRequestViewController.m in Sources */,
 				04D72161156F9C1D00099B8A /* DataRequestView.m in Sources */,
-				047EB7E9157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */,
 				047EB7EE1573850300DDE51E /* PaymentRequestViewController.m in Sources */,
 				047EB7F21573852A00DDE51E /* PaymentRequestView.m in Sources */,
+				040DF27F157CDDA300DF9F38 /* StoreKISS.m in Sources */,
+				040DF280157CDDA300DF9F38 /* StoreKISSDataRequest.m in Sources */,
+				040DF281157CDDA300DF9F38 /* StoreKISSPaymentRequest.m in Sources */,
+				040DF282157CDDA300DF9F38 /* StoreKISSShared.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,10 +373,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04702C9C156F904100EA9D2B /* StoreKISSShared.m in Sources */,
-				04702C9D156F90FD00EA9D2B /* StoreKISSDataRequest.m in Sources */,
-				04702C9E156F910200EA9D2B /* StoreKISS.m in Sources */,
-				047EB7EA157380C800DDE51E /* StoreKISSPaymentRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
