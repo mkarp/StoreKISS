@@ -19,9 +19,16 @@ So you basically request price and then execute the payment. That simple.
 
 ##How to use
 
-###Cocoapods users
+###CocoaPods users
 
-StoreKISS spec will be added to the main spec repository soon, we're right now going through pull request acceptance (see [https://github.com/CocoaPods/Specs/pull/211](https://github.com/CocoaPods/Specs/pull/211)).
+StoreKISS is available to install via CocoaPods. Edit your `Podspec` file:
+
+```ruby
+platform :ios
+...
+dependency 'StoreKISS'
+...
+```
 
 ###Everyone else
 
