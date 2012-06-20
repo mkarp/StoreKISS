@@ -94,7 +94,6 @@ Don't forget to remove the observer:
 	 removeObserver:self
 	 name:StoreKISSNotificationDataRequestSuccess
 	 object:nil];
-	[super dealloc]
 }
 ```
 
