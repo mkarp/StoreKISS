@@ -11,7 +11,7 @@
 @class StoreKISSDataRequest;
 
 typedef enum {
-	StoreKISSDataRequestStatusNew,
+	StoreKISSDataRequestStatusNew = 0,
 	StoreKISSDataRequestStatusStarted,
 	StoreKISSDataRequestStatusFinished
 } StoreKISSDataRequestStatus;
