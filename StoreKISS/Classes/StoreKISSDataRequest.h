@@ -19,11 +19,13 @@ typedef enum {
 typedef void (^StoreKISSDataRequestSuccessBlock)(StoreKISSDataRequest *request);
 typedef void (^StoreKISSDataRequestFailureBlock)(NSError *error);
 
+
 extern NSString * const StoreKISSNotificationDataRequestStarted;
 extern NSString * const StoreKISSNotificationDataRequestSuccess;
 extern NSString * const StoreKISSNotificationDataRequestSuccessResponseKey;
 extern NSString * const StoreKISSNotificationDataRequestFailure;
 extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
+
 
 /** Class for fetching payment data from iTunesConnect using Product IDs.
  
@@ -38,13 +40,16 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  
  Failure block will contain only the `NSError` object in the parameters.
  
- You can also track request execution using notifications. Each notification is a `NSNotification` instance and you can get the `StoreKISSDataRequest` object by accessing its `- object` property.
+ You can also track request execution using notifications. Each notification is a `NSNotification` instance and 
+ you can get the `StoreKISSDataRequest` object by accessing its `- object` property.
  
  Here are notification types:
  
  - `StoreKISSNotificationDataRequestStarted` &mdash; request started;
- - `StoreKISSNotificationDataRequestSuccess` &mdash; request finished with success, the `SKProductsResponse` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestSuccessResponseKey` key;
- - `StoreKISSNotificationDataRequestFailure` &mdash; request finished with failure, the `NSError` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestFailureErrorKey` key. */
+ - `StoreKISSNotificationDataRequestSuccess` &mdash; request finished with success, the `SKProductsResponse` object 
+    can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestSuccessResponseKey` key;
+ - `StoreKISSNotificationDataRequestFailure` &mdash; request finished with failure, the `NSError` object 
+    can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestFailureErrorKey` key. */
 @interface StoreKISSDataRequest : NSObject<SKProductsRequestDelegate>
 
 ///-----------------
@@ -87,12 +92,14 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
 								  success:(StoreKISSDataRequestSuccessBlock)success
 								  failure:(StoreKISSDataRequestFailureBlock)failure;
 
-/** Requests payment data from iTunesConnect for the item with a concrete Product ID. A shortcut to use with notifications.
+/** Requests payment data from iTunesConnect for the item with a concrete Product ID. 
+ A shortcut to use with notifications.
  
  @param productId Product ID of the item for which payment data is fetched. */
 - (void)requestDataForItemWithProductId:(NSString *)productId;
 
-/** Requests payment data from iTunesConnect for items with a set of Product IDs. A shortcut to use with notifications.
+/** Requests payment data from iTunesConnect for items with a set of Product IDs. 
+ A shortcut to use with notifications.
  
  @param productIds Set of Product IDs of the items for which payment data is fetched. */
 - (void)requestDataForItemsWithProductIds:(NSSet *)productIds;

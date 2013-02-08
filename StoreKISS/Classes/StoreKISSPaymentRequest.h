@@ -26,9 +26,11 @@ extern NSString * const StoreKISSNotificationPaymentRequestSuccessTransactionKey
 extern NSString * const StoreKISSNotificationPaymentRequestFailure;
 extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
 
+
 /** Class for making In-App Purchase payments.
  
- Payment is executed using `makePaymentWithSKProduct:success:failure` method which you should provide with a `SKProduct` object.
+ Payment is executed using `makePaymentWithSKProduct:success:failure` method which you should provide with 
+ a `SKProduct` object.
  
  As soon as the request finishes either success or failure block will be called.
  
@@ -36,14 +38,18 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
  
  Failure block will contain only the `NSError` object in the parameters.
  
- You can also track request execution using notifications. Each notification is a `NSNotification` instance and you can get the `StoreKISSPaymentRequest` object by accessing its `- object` property.
+ You can also track request execution using notifications. Each notification is a `NSNotification` instance 
+ and you can get the `StoreKISSPaymentRequest` object by accessing its `- object` property.
  
  Here are notification types:
  
  - `StoreKISSNotificationPaymentRequestStarted` &mdash; request started;
- - `StoreKISSNotificationPaymentRequestPurchasing` &mdash; `SKPaymentTransactionStatePurchasing` status was received;
- - `StoreKISSNotificationPaymentRequestSuccess` &mdash; request finished with success, the `SKPaymentTransaction` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestSuccessTransactionKey` key;
- - `StoreKISSNotificationPaymentRequestFailure` &mdash; request finished with failure, the `NSError` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestFailureErrorKey` key. */
+ - `StoreKISSNotificationPaymentRequestPurchasing` &mdash; `SKPaymentTransactionStatePurchasing` status 
+    was received;
+ - `StoreKISSNotificationPaymentRequestSuccess` &mdash; request finished with success, the `SKPaymentTransaction` 
+    object can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestSuccessTransactionKey` key;
+ - `StoreKISSNotificationPaymentRequestFailure` &mdash; request finished with failure, the `NSError` object 
+    can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestFailureErrorKey` key. */
 @interface StoreKISSPaymentRequest : NSObject<SKPaymentTransactionObserver>
 
 ///-----------------
