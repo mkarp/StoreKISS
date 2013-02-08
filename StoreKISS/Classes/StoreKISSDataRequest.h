@@ -57,7 +57,7 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
 ///-----------------
 
 /** Status of the request. */
-@property (nonatomic) StoreKISSDataRequestStatus status;
+@property (assign, nonatomic) StoreKISSDataRequestStatus status;
 
 /** StoreKIT's SKProductsRequest object.
  Will be nil before the start of request. */

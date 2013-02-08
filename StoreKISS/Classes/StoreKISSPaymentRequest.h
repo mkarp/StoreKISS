@@ -57,7 +57,7 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
 ///-----------------
 
 /** Status of the request. */
-@property (nonatomic) StoreKISSPaymentRequestStatus status;
+@property (assign, nonatomic) StoreKISSPaymentRequestStatus status;
 
 /** Payment which will be sent to Apple.
  Will be nil before the request is started. */

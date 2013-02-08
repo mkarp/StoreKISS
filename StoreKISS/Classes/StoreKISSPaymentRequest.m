@@ -31,12 +31,6 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 
 @implementation StoreKISSPaymentRequest
 
-@synthesize status,
-			skPayment,
-			skTransaction,
-			error;
-@synthesize success,
-			failure;
 
 - (void)dealloc
 {
@@ -153,7 +147,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 		}
 	}
 	
-	[[SKPaymentQueue defaultQueue] finishTransaction:skTransaction];
+	[[SKPaymentQueue defaultQueue] finishTransaction:self.skTransaction];
 }
 
 
