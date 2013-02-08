@@ -26,8 +26,7 @@ extern NSString * const StoreKISSNotificationPaymentRequestSuccessTransactionKey
 extern NSString * const StoreKISSNotificationPaymentRequestFailure;
 extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
 
-/**
- Class for making In-App Purchase payments.
+/** Class for making In-App Purchase payments.
  
  Payment is executed using `makePaymentWithSKProduct:success:failure` method which you should provide with a `SKProduct` object.
  
@@ -44,67 +43,52 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
  - `StoreKISSNotificationPaymentRequestStarted` &mdash; request started;
  - `StoreKISSNotificationPaymentRequestPurchasing` &mdash; `SKPaymentTransactionStatePurchasing` status was received;
  - `StoreKISSNotificationPaymentRequestSuccess` &mdash; request finished with success, the `SKPaymentTransaction` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestSuccessTransactionKey` key;
- - `StoreKISSNotificationPaymentRequestFailure` &mdash; request finished with failure, the `NSError` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestFailureErrorKey` key.
- */
+ - `StoreKISSNotificationPaymentRequestFailure` &mdash; request finished with failure, the `NSError` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestFailureErrorKey` key. */
 @interface StoreKISSPaymentRequest : NSObject<SKPaymentTransactionObserver>
 
 ///-----------------
 /// @name Properties
 ///-----------------
 
-/**
- Status of the request.
- */
+/** Status of the request. */
 @property (nonatomic) StoreKISSPaymentRequestStatus status;
 
-/**
- Payment which will be sent to Apple.
- Will be nil before the request is started.
- */
+/** Payment which will be sent to Apple.
+ Will be nil before the request is started. */
 @property (strong, nonatomic) SKPayment *skPayment;
 
-/**
- Received transaction.
- Will be nil until request is finished.
- */
+/** Received transaction.
+ Will be nil until request is finished. */
 @property (strong, nonatomic) SKPaymentTransaction *skTransaction;
 
-/**
- Error if failed.
- */
+/** Error if failed. */
 @property (strong, nonatomic) NSError *error;
 
 ///-----------------------------------
 /// @name Checking payment possibility
 ///-----------------------------------
 
-/**
- Check whether payment execution is possible.
+/** Check whether payment execution is possible.
  
- For more information see `SKPaymentQueue` `-canMakePayments` method documentation.
- */
+ For more information see `SKPaymentQueue` `-canMakePayments` method documentation. */
 - (BOOL)canMakePayments;
 
 ///----------------------
 /// @name Making payments
 ///----------------------
 
-/**
- Make payment with SKProduct.
+/** Make payment with SKProduct.
  
  @param skProduct SKProduct you've received from StoreKit's API.
  @param success Block that will be called after successful ending of the operation.
- @param failure Block that will be called in case of error.
- */
+ @param failure Block that will be called in case of error. */
 - (void)makePaymentWithSKProduct:(SKProduct *)skProduct
 						 success:(PaymentRequestSuccessBlock)success
 						 failure:(PaymentRequestFailureBlock)failure;
 
-/**
- Make payment with SKProduct. A shortcut to use with notifications.
+/** Make payment with SKProduct. A shortcut to use with notifications.
  
- @param skProduct SKProduct you've received from StoreKit's API.
- */
+ @param skProduct SKProduct you've received from StoreKit's API. */
 - (void)makePaymentWithSKProduct:(SKProduct *)skProduct;
 
 @end

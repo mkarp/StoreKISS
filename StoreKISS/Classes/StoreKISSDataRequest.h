@@ -25,8 +25,7 @@ extern NSString * const StoreKISSNotificationDataRequestSuccessResponseKey;
 extern NSString * const StoreKISSNotificationDataRequestFailure;
 extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
 
-/**
- Class for fetching payment data from iTunesConnect using Product IDs.
+/** Class for fetching payment data from iTunesConnect using Product IDs.
  
  There are two methods to accomplish that:
  
@@ -45,74 +44,57 @@ extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
  
  - `StoreKISSNotificationDataRequestStarted` &mdash; request started;
  - `StoreKISSNotificationDataRequestSuccess` &mdash; request finished with success, the `SKProductsResponse` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestSuccessResponseKey` key;
- - `StoreKISSNotificationDataRequestFailure` &mdash; request finished with failure, the `NSError` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestFailureErrorKey` key.
- */
+ - `StoreKISSNotificationDataRequestFailure` &mdash; request finished with failure, the `NSError` object can be accessed in `userInfo` dictionary by `StoreKISSNotificationDataRequestFailureErrorKey` key. */
 @interface StoreKISSDataRequest : NSObject<SKProductsRequestDelegate>
 
 ///-----------------
 /// @name Properties
 ///-----------------
 
-/**
- Status of the request.
- */
+/** Status of the request. */
 @property (nonatomic) StoreKISSDataRequestStatus status;
 
-/**
- StoreKIT's SKProductsRequest object.
- Will be nil before the start of request.
- */
+/** StoreKIT's SKProductsRequest object.
+ Will be nil before the start of request. */
 @property (strong, nonatomic) SKProductsRequest *skRequest;
 
-/**
- StoreKIT's SKProductsResponse object.
- Will be nil until request is successfully finished.
- */
+/** StoreKIT's SKProductsResponse object.
+ Will be nil until request is successfully finished. */
 @property (strong, nonatomic) SKProductsResponse *skResponse;
 
-/**
- Error if failed.
- */
+/** Error if failed. */
 @property (strong, nonatomic) NSError *error;
 
 ///----------------------
 /// @name Requesting data
 ///----------------------
 
-/**
- Requests payment data from iTunesConnect for the item with a concrete Product ID.
+/** Requests payment data from iTunesConnect for the item with a concrete Product ID.
  
  @param productId Product ID of the item for which payment data is fetched.
  @param success Success block.
- @param failure Failure block.
- */
+ @param failure Failure block. */
 - (void)requestDataForItemWithProductId:(NSString *)productId
 								success:(StoreKISSDataRequestSuccessBlock)success
 								failure:(StoreKISSDataRequestFailureBlock)failure;
 
-/**
- Requests payment data from iTunesConnect for items with a set of Product IDs.
+/** Requests payment data from iTunesConnect for items with a set of Product IDs.
  
  @param productIds Set of Product IDs of the items for which payment data is fetched.
  @param success Success block.
- @param failure Failure block.
- */
+ @param failure Failure block. */
 - (void)requestDataForItemsWithProductIds:(NSSet *)productIds
 								  success:(StoreKISSDataRequestSuccessBlock)success
 								  failure:(StoreKISSDataRequestFailureBlock)failure;
 
-/**
- Requests payment data from iTunesConnect for the item with a concrete Product ID. A shortcut to use with notifications.
+/** Requests payment data from iTunesConnect for the item with a concrete Product ID. A shortcut to use with notifications.
  
- @param productId Product ID of the item for which payment data is fetched.
- */
+ @param productId Product ID of the item for which payment data is fetched. */
 - (void)requestDataForItemWithProductId:(NSString *)productId;
 
-/**
- Requests payment data from iTunesConnect for items with a set of Product IDs. A shortcut to use with notifications.
+/** Requests payment data from iTunesConnect for items with a set of Product IDs. A shortcut to use with notifications.
  
- @param productIds Set of Product IDs of the items for which payment data is fetched.
- */
+ @param productIds Set of Product IDs of the items for which payment data is fetched. */
 - (void)requestDataForItemsWithProductIds:(NSSet *)productIds;
 
 @end
