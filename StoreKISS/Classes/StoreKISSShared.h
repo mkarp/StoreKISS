@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 
+
 /** Indicates an error occured in StoreKISS. */
 extern NSString * const StoreKISSErrorDomain;

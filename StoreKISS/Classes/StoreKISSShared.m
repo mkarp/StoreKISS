@@ -8,4 +8,5 @@
 
 #import "StoreKISSShared.h"
 
+
 NSString * const StoreKISSErrorDomain = @"com.redigion.storekiss.error";
