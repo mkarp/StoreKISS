@@ -84,7 +84,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 	
 	if ([self canMakePayments] == NO)
     {
-        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Can not make payments."};
+        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"In-App Purchasing is disabled."};
 		self.error = [NSError errorWithDomain:StoreKISSErrorDomain
                                          code:0
                                      userInfo:userInfo];
