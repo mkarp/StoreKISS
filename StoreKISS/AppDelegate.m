@@ -11,9 +11,6 @@
 
 @implementation AppDelegate
 
-@synthesize window,
-			navigationController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

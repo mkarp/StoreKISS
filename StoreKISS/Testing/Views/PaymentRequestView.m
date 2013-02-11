@@ -10,15 +10,11 @@
 
 @implementation PaymentRequestView
 
-@synthesize launchButton,
-			statusLabel,
-			notificationStatusLabel,
-			logTextView;
-
 - (id)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+    {
 		self.launchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		self.launchButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		[self.launchButton
