@@ -8,7 +8,9 @@
 
 #import "StoreKISSShared.h"
 
+
 @class StoreKISSPaymentRequest;
+
 
 typedef enum {
 	StoreKISSPaymentRequestStatusNew = 0,
@@ -23,9 +25,11 @@ typedef void (^StoreKISSPaymentRequestFailureBlock)(NSError *error);
 extern NSString * const StoreKISSNotificationPaymentRequestStarted;
 extern NSString * const StoreKISSNotificationPaymentRequestPurchasing;
 extern NSString * const StoreKISSNotificationPaymentRequestSuccess;
-extern NSString * const StoreKISSNotificationPaymentRequestSuccessTransactionKey;
 extern NSString * const StoreKISSNotificationPaymentRequestFailure;
-extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
+
+
+#define StoreKISSNotificationPaymentRequestSuccessTransactionKey @"StoreKISSNotificationPaymentRequestSuccessTransactionKey"
+#define StoreKISSNotificationPaymentRequestFailureErrorKey @"StoreKISSNotificationPaymentRequestFailureErrorKey"
 
 
 /** Class for making In-App Purchase payments.

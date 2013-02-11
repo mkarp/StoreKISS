@@ -14,11 +14,8 @@ NSString * const StoreKISSNotificationDataRequestStarted =
     @"com.redigion.storekiss.notification.dataRequest.started";
 NSString * const StoreKISSNotificationDataRequestSuccess =
     @"com.redigion.storekiss.notification.dataRequest.success";
-NSString * const StoreKISSNotificationDataRequestSuccessResponseKey = @"com.redigion.storekiss.notification.dataRequest.success.response";
 NSString * const StoreKISSNotificationDataRequestFailure =
     @"com.redigion.storekiss.notification.dataRequest.failure";
-NSString * const StoreKISSNotificationDataRequestFailureErrorKey =
-    @"com.redigion.storekiss.notification.dataRequest.failure.error";
 
 
 @interface StoreKISSDataRequest ()

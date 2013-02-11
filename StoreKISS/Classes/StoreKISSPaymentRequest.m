@@ -15,10 +15,8 @@ NSString * const StoreKISSNotificationPaymentRequestSuccess =
     @"com.redigion.storekiss.notification.paymentRequest.success";
 NSString * const StoreKISSNotificationPaymentRequestPurchasing =
     @"com.redigion.storekiss.notification.paymentRequest.purchasing";
-NSString * const StoreKISSNotificationPaymentRequestSuccessTransactionKey = @"com.redigion.storekiss.notification.paymentRequest.success.transaction";
 NSString * const StoreKISSNotificationPaymentRequestFailure =
     @"com.redigion.storekiss.notification.PaymentRequest.failure";
-NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redigion.storekiss.notification.PaymentRequest.failure.error";
 
 
 @interface StoreKISSPaymentRequest ()

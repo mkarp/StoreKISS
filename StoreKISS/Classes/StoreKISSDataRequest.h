@@ -22,9 +22,11 @@ typedef void (^StoreKISSDataRequestFailureBlock)(NSError *error);
 
 extern NSString * const StoreKISSNotificationDataRequestStarted;
 extern NSString * const StoreKISSNotificationDataRequestSuccess;
-extern NSString * const StoreKISSNotificationDataRequestSuccessResponseKey;
 extern NSString * const StoreKISSNotificationDataRequestFailure;
-extern NSString * const StoreKISSNotificationDataRequestFailureErrorKey;
+
+
+#define StoreKISSNotificationDataRequestSuccessResponseKey @"StoreKISSNotificationDataRequestSuccessResponseKey"
+#define StoreKISSNotificationDataRequestFailureErrorKey @"StoreKISSNotificationDataRequestFailureErrorKey"
 
 
 /** Class for fetching payment data from iTunesConnect using Product IDs.
