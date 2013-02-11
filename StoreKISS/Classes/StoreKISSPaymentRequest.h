@@ -11,7 +11,7 @@
 @class StoreKISSPaymentRequest;
 
 typedef enum {
-	StoreKISSPaymentRequestStatusNew,
+	StoreKISSPaymentRequestStatusNew = 0,
 	StoreKISSPaymentRequestStatusStarted,
 	StoreKISSPaymentRequestStatusFinished
 } StoreKISSPaymentRequestStatus;
