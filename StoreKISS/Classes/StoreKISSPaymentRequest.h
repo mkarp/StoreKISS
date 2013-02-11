@@ -16,8 +16,9 @@ typedef enum {
 	StoreKISSPaymentRequestStatusFinished
 } StoreKISSPaymentRequestStatus;
 
-typedef void (^PaymentRequestSuccessBlock)(StoreKISSPaymentRequest *request);
-typedef void (^PaymentRequestFailureBlock)(NSError *error);
+typedef void (^StoreKISSPaymentRequestSuccessBlock)(StoreKISSPaymentRequest *request);
+typedef void (^StoreKISSPaymentRequestFailureBlock)(NSError *error);
+
 
 extern NSString * const StoreKISSNotificationPaymentRequestStarted;
 extern NSString * const StoreKISSNotificationPaymentRequestPurchasing;
@@ -89,8 +90,8 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey;
  @param success Block that will be called after successful ending of the operation.
  @param failure Block that will be called in case of error. */
 - (void)makePaymentWithSKProduct:(SKProduct *)skProduct
-						 success:(PaymentRequestSuccessBlock)success
-						 failure:(PaymentRequestFailureBlock)failure;
+						 success:(StoreKISSPaymentRequestSuccessBlock)success
+						 failure:(StoreKISSPaymentRequestFailureBlock)failure;
 
 /** Make payment with SKProduct. A shortcut to use with notifications.
  

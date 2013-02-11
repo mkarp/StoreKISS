@@ -23,8 +23,8 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 
 @interface StoreKISSPaymentRequest ()
 
-@property (copy, nonatomic) PaymentRequestSuccessBlock success;
-@property (copy, nonatomic) PaymentRequestFailureBlock failure;
+@property (copy, nonatomic) StoreKISSPaymentRequestSuccessBlock success;
+@property (copy, nonatomic) StoreKISSPaymentRequestFailureBlock failure;
 
 @end
 
@@ -62,8 +62,8 @@ NSString * const StoreKISSNotificationPaymentRequestFailureErrorKey = @"com.redi
 #pragma mark - Making payment
 // ------------------------------------------------------------------------------------------
 - (void)makePaymentWithSKProduct:(SKProduct *)skProduct
-						 success:(PaymentRequestSuccessBlock)successBlock
-						 failure:(PaymentRequestFailureBlock)failureBlock
+						 success:(StoreKISSPaymentRequestSuccessBlock)successBlock
+						 failure:(StoreKISSPaymentRequestFailureBlock)failureBlock
 {
 	if ([self isExecuting])
     {
