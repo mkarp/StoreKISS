@@ -8,7 +8,9 @@
 
 #import "StoreKISSShared.h"
 
+
 @class StoreKISSDataRequest;
+
 
 typedef enum {
 	StoreKISSDataRequestStatusNew = 0,
