@@ -145,7 +145,7 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 		 if (currentRequest.skResponse.products.count != 1)
          {
 			 NSError *error = [NSError
-							   errorWithDomain:nil
+							   errorWithDomain:@"com.redigion.storekiss.error.test"
 							   code:0
 							   userInfo:[NSDictionary
 										 dictionaryWithObject:@"No products received."
