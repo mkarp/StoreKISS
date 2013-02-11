@@ -11,6 +11,8 @@
 		040DF280157CDDA300DF9F38 /* StoreKISSDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF27A157CDDA300DF9F38 /* StoreKISSDataRequest.m */; };
 		040DF281157CDDA300DF9F38 /* StoreKISSPaymentRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF27C157CDDA300DF9F38 /* StoreKISSPaymentRequest.m */; };
 		040DF282157CDDA300DF9F38 /* StoreKISSShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */; };
+		042CF1E416C9356400C95529 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CF1E316C9356400C95529 /* Reachability.m */; };
+		04350CBE16C941F90050B904 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04350CBD16C941F90050B904 /* SystemConfiguration.framework */; };
 		04702C94156E7D9D00EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
 		04702C95156E7E0300EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
 		047EB7EE1573850300DDE51E /* PaymentRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */; };
@@ -29,8 +31,6 @@
 		04DAE5B4156E758A00B5AFC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59A156E758A00B5AFC6 /* UIKit.framework */; };
 		04DAE5B5156E758A00B5AFC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04DAE59C156E758A00B5AFC6 /* Foundation.framework */; };
 		04DAE5BD156E758B00B5AFC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04DAE5BB156E758B00B5AFC6 /* InfoPlist.strings */; };
-		208AFBCC015C47BAAF74E55B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08AB829B87C406C9D48B587 /* libPods.a */; };
-		81659FCA797B4798959B3035 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08AB829B87C406C9D48B587 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +52,9 @@
 		040DF27C157CDDA300DF9F38 /* StoreKISSPaymentRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSPaymentRequest.m; sourceTree = "<group>"; };
 		040DF27D157CDDA300DF9F38 /* StoreKISSShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSShared.h; sourceTree = "<group>"; };
 		040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSShared.m; sourceTree = "<group>"; };
+		042CF1E216C9356400C95529 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		042CF1E316C9356400C95529 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		04350CBD16C941F90050B904 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		04702C93156E7D9D00EA9D2B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		047EB7EC1573850300DDE51E /* PaymentRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentRequestViewController.h; sourceTree = "<group>"; };
 		047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentRequestViewController.m; sourceTree = "<group>"; };
@@ -78,8 +81,6 @@
 		04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		04DAE5BA156E758B00B5AFC6 /* StoreKISSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreKISSTests-Info.plist"; sourceTree = "<group>"; };
 		04DAE5BC156E758B00B5AFC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		47E8E0D67DFB44378F3A6F89 /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		E08AB829B87C406C9D48B587 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +88,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04350CBE16C941F90050B904 /* SystemConfiguration.framework in Frameworks */,
 				04702C94156E7D9D00EA9D2B /* StoreKit.framework in Frameworks */,
 				04DAE59B156E758A00B5AFC6 /* UIKit.framework in Frameworks */,
 				04DAE59D156E758A00B5AFC6 /* Foundation.framework in Frameworks */,
 				04DAE59F156E758A00B5AFC6 /* CoreGraphics.framework in Frameworks */,
-				208AFBCC015C47BAAF74E55B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +104,6 @@
 				04DAE5B3156E758A00B5AFC6 /* SenTestingKit.framework in Frameworks */,
 				04DAE5B4156E758A00B5AFC6 /* UIKit.framework in Frameworks */,
 				04DAE5B5156E758A00B5AFC6 /* Foundation.framework in Frameworks */,
-				81659FCA797B4798959B3035 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +113,7 @@
 		040DF276157CDDA300DF9F38 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				042CF1E116C9356400C95529 /* Reachability */,
 				040DF277157CDDA300DF9F38 /* StoreKISS.h */,
 				040DF278157CDDA300DF9F38 /* StoreKISS.m */,
 				040DF279157CDDA300DF9F38 /* StoreKISSDataRequest.h */,
@@ -123,6 +124,15 @@
 				040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		042CF1E116C9356400C95529 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				042CF1E216C9356400C95529 /* Reachability.h */,
+				042CF1E316C9356400C95529 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		04D72151156F94BB00099B8A /* Testing */ = {
@@ -165,7 +175,6 @@
 				04DAE5B8156E758A00B5AFC6 /* StoreKISSTests */,
 				04DAE599156E758A00B5AFC6 /* Frameworks */,
 				04DAE597156E758A00B5AFC6 /* Products */,
-				47E8E0D67DFB44378F3A6F89 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,12 +190,12 @@
 		04DAE599156E758A00B5AFC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				04350CBD16C941F90050B904 /* SystemConfiguration.framework */,
 				04DAE59A156E758A00B5AFC6 /* UIKit.framework */,
 				04702C93156E7D9D00EA9D2B /* StoreKit.framework */,
 				04DAE59C156E758A00B5AFC6 /* Foundation.framework */,
 				04DAE59E156E758A00B5AFC6 /* CoreGraphics.framework */,
 				04DAE5B2156E758A00B5AFC6 /* SenTestingKit.framework */,
-				E08AB829B87C406C9D48B587 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,7 +251,6 @@
 				04DAE592156E758A00B5AFC6 /* Sources */,
 				04DAE593156E758A00B5AFC6 /* Frameworks */,
 				04DAE594156E758A00B5AFC6 /* Resources */,
-				D93CF28B087543EA927DC456 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -261,7 +269,6 @@
 				04DAE5AD156E758A00B5AFC6 /* Frameworks */,
 				04DAE5AE156E758A00B5AFC6 /* Resources */,
 				04DAE5AF156E758A00B5AFC6 /* ShellScript */,
-				D93CF28B087543EA927DC456 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,20 +341,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-		D93CF28B087543EA927DC456 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -366,6 +359,7 @@
 				040DF280157CDDA300DF9F38 /* StoreKISSDataRequest.m in Sources */,
 				040DF281157CDDA300DF9F38 /* StoreKISSPaymentRequest.m in Sources */,
 				040DF282157CDDA300DF9F38 /* StoreKISSShared.m in Sources */,
+				042CF1E416C9356400C95529 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +449,6 @@
 		};
 		04DAE5C4156E758B00B5AFC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47E8E0D67DFB44378F3A6F89 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Misha Karpenko (Y3L5EZ49HK)";
 				DSTROOT = /tmp/xcodeproj.dst;
@@ -472,7 +465,6 @@
 		};
 		04DAE5C5156E758B00B5AFC6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47E8E0D67DFB44378F3A6F89 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer: Misha Karpenko (Y3L5EZ49HK)";
 				DSTROOT = /tmp/xcodeproj.dst;
@@ -489,7 +481,6 @@
 		};
 		04DAE5C7156E758B00B5AFC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47E8E0D67DFB44378F3A6F89 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StoreKISS.app/StoreKISS";
 				DSTROOT = /tmp/xcodeproj.dst;
@@ -510,7 +501,6 @@
 		};
 		04DAE5C8156E758B00B5AFC6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 47E8E0D67DFB44378F3A6F89 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StoreKISS.app/StoreKISS";
 				DSTROOT = /tmp/xcodeproj.dst;
