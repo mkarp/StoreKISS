@@ -75,6 +75,14 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailure;
 /** Error if failed. */
 @property (strong, nonatomic) NSError *error;
 
+///-------------------
+/// @name Dependencies
+///-------------------
+
+/** Notification center dependency. Assign one of yours if needed. `[NSNotificationCenter defaultCenter]`
+ will be used by default. */
+@property (weak, nonatomic) NSNotificationCenter *notificationCenter;
+
 ///-----------------------------------
 /// @name Checking payment possibility
 ///-----------------------------------

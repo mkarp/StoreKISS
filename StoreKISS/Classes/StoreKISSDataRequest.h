@@ -7,6 +7,7 @@
 //
 
 #import "StoreKISSShared.h"
+#import "StoreKISSReachabilityProtocol.h"
 
 
 @class StoreKISSDataRequest;
@@ -73,6 +74,18 @@ extern NSString * const StoreKISSNotificationDataRequestFailure;
 
 /** Error if failed. */
 @property (strong, nonatomic) NSError *error;
+
+///-------------------
+/// @name Dependencies
+///-------------------
+
+/** Reachability dependency. Assign one of yours if needed. See `StoreKISSReachabilityProtocol` documentation. 
+ `StoreKISSReachability` instance will be used by default. */
+@property (strong, nonatomic) id<StoreKISSReachabilityProtocol> reachability;
+
+/** Notification center dependency. Assign one of yours if needed. `[NSNotificationCenter defaultCenter]` 
+ will be used by default. */
+@property (weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 ///----------------------
 /// @name Requesting data

@@ -13,6 +13,7 @@
 		040DF282157CDDA300DF9F38 /* StoreKISSShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */; };
 		042CF1E416C9356400C95529 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CF1E316C9356400C95529 /* Reachability.m */; };
 		04350CBE16C941F90050B904 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04350CBD16C941F90050B904 /* SystemConfiguration.framework */; };
+		04350CC516C9479D0050B904 /* StoreKISSReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 04350CC416C9479C0050B904 /* StoreKISSReachability.m */; };
 		04702C94156E7D9D00EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
 		04702C95156E7E0300EA9D2B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04702C93156E7D9D00EA9D2B /* StoreKit.framework */; };
 		047EB7EE1573850300DDE51E /* PaymentRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */; };
@@ -55,6 +56,9 @@
 		042CF1E216C9356400C95529 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		042CF1E316C9356400C95529 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		04350CBD16C941F90050B904 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		04350CC216C947850050B904 /* StoreKISSReachabilityProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSReachabilityProtocol.h; sourceTree = "<group>"; };
+		04350CC316C9479C0050B904 /* StoreKISSReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreKISSReachability.h; sourceTree = "<group>"; };
+		04350CC416C9479C0050B904 /* StoreKISSReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreKISSReachability.m; sourceTree = "<group>"; };
 		04702C93156E7D9D00EA9D2B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		047EB7EC1573850300DDE51E /* PaymentRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentRequestViewController.h; sourceTree = "<group>"; };
 		047EB7ED1573850300DDE51E /* PaymentRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentRequestViewController.m; sourceTree = "<group>"; };
@@ -120,6 +124,9 @@
 				040DF27A157CDDA300DF9F38 /* StoreKISSDataRequest.m */,
 				040DF27B157CDDA300DF9F38 /* StoreKISSPaymentRequest.h */,
 				040DF27C157CDDA300DF9F38 /* StoreKISSPaymentRequest.m */,
+				04350CC316C9479C0050B904 /* StoreKISSReachability.h */,
+				04350CC416C9479C0050B904 /* StoreKISSReachability.m */,
+				04350CC216C947850050B904 /* StoreKISSReachabilityProtocol.h */,
 				040DF27D157CDDA300DF9F38 /* StoreKISSShared.h */,
 				040DF27E157CDDA300DF9F38 /* StoreKISSShared.m */,
 			);
@@ -360,6 +367,7 @@
 				040DF281157CDDA300DF9F38 /* StoreKISSPaymentRequest.m in Sources */,
 				040DF282157CDDA300DF9F38 /* StoreKISSShared.m in Sources */,
 				042CF1E416C9356400C95529 /* Reachability.m in Sources */,
+				04350CC516C9479D0050B904 /* StoreKISSReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "StoreKISSDataRequest.h"
-#import "Reachability.h"
+#import "StoreKISSReachability.h"
 
 
 NSString * const StoreKISSNotificationDataRequestStarted =
@@ -29,6 +29,10 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 @implementation StoreKISSDataRequest
 
 
+@synthesize reachability = _reachability;
+@synthesize notificationCenter = _notificationCenter;
+
+
 - (id)init
 {
 	if ((self = [super init]))
@@ -36,6 +40,31 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 		self.status = StoreKISSDataRequestStatusNew;
 	}
 	return self;
+}
+
+
+// ------------------------------------------------------------------------------------------
+#pragma mark - Getters Overwriting
+// ------------------------------------------------------------------------------------------
+- (id<StoreKISSReachabilityProtocol>)reachability
+{
+    if (_reachability == nil)
+    {
+        _reachability = [[StoreKISSReachability alloc] init];
+    }
+    
+    return _reachability;
+}
+
+
+- (NSNotificationCenter *)notificationCenter
+{
+    if (_notificationCenter == nil)
+    {
+        _notificationCenter = [NSNotificationCenter defaultCenter];
+    }
+    
+    return _notificationCenter;
 }
 
 
@@ -64,7 +93,7 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 	self.success = successBlock;
 	self.failure = failureBlock;
 	
-	if ([[Reachability reachabilityForInternetConnection] isReachable] == NO)
+	if ([self.reachability hasReachableInternetConnection] == NO)
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"No internet connection.", @"")};
 		self.error = [NSError errorWithDomain:StoreKISSErrorDomain
@@ -105,8 +134,8 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 	[self.skRequest start];
 
 	self.status = StoreKISSDataRequestStatusStarted;
-	[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationDataRequestStarted
-                                                        object:self];
+	[self.notificationCenter postNotificationName:StoreKISSNotificationDataRequestStarted
+                                           object:self];
 }
 
 
@@ -117,9 +146,9 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 	if (self.skResponse && self.error == nil)
     {
         NSDictionary *userInfo = @{StoreKISSNotificationDataRequestSuccessResponseKey: self.skResponse};
-		[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationDataRequestSuccess
-                                                            object:self
-                                                          userInfo:userInfo];
+		[self.notificationCenter postNotificationName:StoreKISSNotificationDataRequestSuccess
+                                               object:self
+                                             userInfo:userInfo];
 		if (self.success)
         {
 			self.success(self);
@@ -128,9 +157,9 @@ NSString * const StoreKISSNotificationDataRequestFailure =
     else
     {
         NSDictionary *userInfo = @{StoreKISSNotificationDataRequestFailureErrorKey: self.error};
-		[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationDataRequestFailure
-                                                            object:self
-                                                          userInfo:userInfo];
+		[self.notificationCenter postNotificationName:StoreKISSNotificationDataRequestFailure
+                                               object:self
+                                             userInfo:userInfo];
 		if (self.failure)
         {
 			self.failure(self.error);

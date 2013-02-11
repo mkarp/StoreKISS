@@ -48,6 +48,20 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 
 
 // ------------------------------------------------------------------------------------------
+#pragma mark - Getters Overwriting
+// ------------------------------------------------------------------------------------------
+- (NSNotificationCenter *)notificationCenter
+{
+    if (_notificationCenter == nil)
+    {
+        _notificationCenter = [NSNotificationCenter defaultCenter];
+    }
+    
+    return _notificationCenter;
+}
+
+
+// ------------------------------------------------------------------------------------------
 #pragma mark - Checking payment possibility
 // ------------------------------------------------------------------------------------------
 - (BOOL)canMakePayments
@@ -113,8 +127,8 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 	[[SKPaymentQueue defaultQueue] addPayment:self.skPayment];
 	
 	self.status = StoreKISSPaymentRequestStatusStarted;
-	[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationPaymentRequestStarted
-                                                        object:self];
+	[self.notificationCenter postNotificationName:StoreKISSNotificationPaymentRequestStarted
+                                           object:self];
 }
 
 
@@ -125,9 +139,9 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 	if (self.skTransaction && self.error == nil)
     {
         NSDictionary *userInfo = @{StoreKISSNotificationPaymentRequestSuccessTransactionKey: self.skTransaction};
-		[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationPaymentRequestSuccess
-                                                            object:self
-                                                          userInfo:userInfo];
+		[self.notificationCenter postNotificationName:StoreKISSNotificationPaymentRequestSuccess
+                                               object:self
+                                             userInfo:userInfo];
 		if (self.success)
         {
 			self.success(self);
@@ -136,9 +150,9 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
     else
     {
         NSDictionary *userInfo = @{StoreKISSNotificationPaymentRequestFailureErrorKey: self.error};
-		[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationPaymentRequestFailure
-                                                            object:self
-                                                          userInfo:userInfo];
+		[self.notificationCenter postNotificationName:StoreKISSNotificationPaymentRequestFailure
+                                               object:self
+                                             userInfo:userInfo];
 		if (self.failure)
         {
 			self.failure(self.error);
@@ -179,9 +193,9 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 		case SKPaymentTransactionStatePurchasing: {
             NSDictionary *userInfo =
                 @{StoreKISSNotificationPaymentRequestSuccessTransactionKey: self.skTransaction};
-			[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationPaymentRequestPurchasing
-                                                                object:self
-                                                              userInfo:userInfo];
+			[self.notificationCenter postNotificationName:StoreKISSNotificationPaymentRequestPurchasing
+                                                   object:self
+                                                 userInfo:userInfo];
 			break;
         }
 	
