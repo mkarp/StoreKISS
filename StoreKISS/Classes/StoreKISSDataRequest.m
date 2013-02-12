@@ -11,14 +11,16 @@
 
 
 NSString * const StoreKISSNotificationDataRequestStarted =
-    @"com.redigion.storekiss.notification.dataRequest.started";
+@"com.redigion.storekiss.notification.dataRequest.started";
 NSString * const StoreKISSNotificationDataRequestSuccess =
-    @"com.redigion.storekiss.notification.dataRequest.success";
+@"com.redigion.storekiss.notification.dataRequest.success";
 NSString * const StoreKISSNotificationDataRequestFailure =
-    @"com.redigion.storekiss.notification.dataRequest.failure";
+@"com.redigion.storekiss.notification.dataRequest.failure";
 
 
 @interface StoreKISSDataRequest ()
+
+@property (strong, nonatomic) id strongSelf;
 
 @property (copy, nonatomic) StoreKISSDataRequestSuccessBlock success;
 @property (copy, nonatomic) StoreKISSDataRequestFailureBlock failure;
@@ -84,7 +86,7 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 
 
 - (void)requestDataForItemsWithProductIds:(NSSet *)productIds
-								  success:(StoreKISSDataRequestSuccessBlock)successBlock 
+								  success:(StoreKISSDataRequestSuccessBlock)successBlock
 								  failure:(StoreKISSDataRequestFailureBlock)failureBlock
 {
 	if ([self isExecuting])
@@ -133,8 +135,10 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 // ------------------------------------------------------------------------------------------
 - (void)start
 {
+    self.strongSelf = self;
+    
 	[self.skRequest start];
-
+    
 	self.status = StoreKISSDataRequestStatusStarted;
 	[self.notificationCenter postNotificationName:StoreKISSNotificationDataRequestStarted
                                            object:self];
@@ -167,6 +171,8 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 			self.failure(self.error);
 		}
 	}
+    
+    self.strongSelf = nil;
 }
 
 

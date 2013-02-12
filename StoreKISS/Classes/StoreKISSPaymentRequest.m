@@ -21,6 +21,8 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 
 @interface StoreKISSPaymentRequest ()
 
+@property (strong, nonatomic) id strongSelf;
+
 @property (copy, nonatomic) StoreKISSPaymentRequestSuccessBlock success;
 @property (copy, nonatomic) StoreKISSPaymentRequestFailureBlock failure;
 
@@ -129,6 +131,8 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 // ------------------------------------------------------------------------------------------
 - (void)start
 {
+    self.strongSelf = self;
+    
 	[[SKPaymentQueue defaultQueue] addPayment:self.skPayment];
 	
 	self.status = StoreKISSPaymentRequestStatusStarted;
@@ -165,6 +169,8 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 	}
 	
 	[[SKPaymentQueue defaultQueue] finishTransaction:self.skTransaction];
+    
+    self.strongSelf = nil;
 }
 
 
