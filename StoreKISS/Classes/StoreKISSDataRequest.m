@@ -29,6 +29,8 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 @implementation StoreKISSDataRequest
 
 
+@synthesize skRequest = _skRequest;
+@synthesize skResponse = _skResponse;
 @synthesize reachability = _reachability;
 @synthesize notificationCenter = _notificationCenter;
 
@@ -103,7 +105,7 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 		return;
 	}
 	
-	self.skRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIds];
+	_skRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIds];
 	self.skRequest.delegate = self;
 	
 	[self start];
@@ -180,7 +182,7 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 - (void)productsRequest:(SKProductsRequest *)request
 	 didReceiveResponse:(SKProductsResponse *)receivedResponse
 {
-	self.skResponse = receivedResponse;
+	_skResponse = receivedResponse;
 	[self finish];
 }
 

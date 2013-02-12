@@ -30,6 +30,11 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 @implementation StoreKISSPaymentRequest
 
 
+@synthesize skPayment = _skPayment;
+@synthesize skTransaction = _skTransaction;
+@synthesize notificationCenter = _notificationCenter;
+
+
 - (void)dealloc
 {
 	[[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
@@ -102,7 +107,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 		return;
 	}
 
-	self.skPayment = [SKPayment paymentWithProduct:skProduct];
+	_skPayment = [SKPayment paymentWithProduct:skProduct];
 	
 	self.success = successBlock;
 	self.failure = failureBlock;
@@ -179,7 +184,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
     {
 		if ([updatedTransaction.payment isEqual:self.skPayment])
         {
-			self.skTransaction = updatedTransaction;
+			_skTransaction = updatedTransaction;
 		}
 	}
 	
