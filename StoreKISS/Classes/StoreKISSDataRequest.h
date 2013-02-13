@@ -64,13 +64,16 @@ extern NSString * const StoreKISSNotificationDataRequestFailure;
 /** Status of the request. */
 @property (assign, nonatomic) StoreKISSDataRequestStatus status;
 
-/** StoreKIT's SKProductsRequest object.
+/** StoreKit's SKProductsRequest object.
  Will be nil before the start of request. */
 @property (strong, nonatomic, readonly) SKProductsRequest *skRequest;
 
-/** StoreKIT's SKProductsResponse object.
+/** StoreKit's SKProductsResponse object.
  Will be nil until request is successfully finished. */
 @property (strong, nonatomic, readonly) SKProductsResponse *skResponse;
+
+/** Product IDs for whose the request is being made. */
+@property (strong, nonatomic, readonly) NSSet *productIds;
 
 /** Error if failed. */
 @property (strong, nonatomic) NSError *error;

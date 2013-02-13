@@ -107,7 +107,8 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 		return;
 	}
 	
-	_skRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:productIds];
+    _productIds = productIds;
+	_skRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:self.productIds];
 	self.skRequest.delegate = self;
 	
 	[self start];
