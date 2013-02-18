@@ -179,7 +179,19 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 	}
     else
     {
-        NSDictionary *userInfo = @{StoreKISSNotificationPaymentRequestFailureErrorKey: self.error};
+        NSDictionary *userInfo = nil;
+        if (self.error != nil)
+        {
+            userInfo = @{StoreKISSNotificationPaymentRequestFailureErrorKey: self.error};
+        }
+        else
+        {
+            NSError *error = [NSError errorWithDomain:StoreKISSErrorDomain
+                                                 code:0
+                                             userInfo:@{NSLocalizedDescriptionKey: @"Can't process transaction"}];
+            userInfo = @{StoreKISSNotificationPaymentRequestFailureErrorKey: error};
+        }
+        
 		[self.notificationCenter postNotificationName:StoreKISSNotificationPaymentRequestFailure
                                                object:self
                                              userInfo:userInfo];
