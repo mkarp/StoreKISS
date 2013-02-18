@@ -7,6 +7,7 @@
 //
 
 #import "StoreKISSShared.h"
+#import "StoreKISSReachabilityProtocol.h"
 
 
 @class StoreKISSPaymentRequest;
@@ -78,6 +79,10 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailure;
 ///-------------------
 /// @name Dependencies
 ///-------------------
+
+/** Reachability dependency. Assign one of yours if needed. See `StoreKISSReachabilityProtocol` documentation.
+ `StoreKISSReachability` instance will be used by default. */
+@property (strong, nonatomic) id<StoreKISSReachabilityProtocol> reachability;
 
 /** Notification center dependency. Assign one of yours if needed. `[NSNotificationCenter defaultCenter]`
  will be used by default. */

@@ -7,6 +7,7 @@
 //
 
 #import "StoreKISSPaymentRequest.h"
+#import "StoreKISSReachability.h"
 
 
 NSString * const StoreKISSNotificationPaymentRequestStarted =
@@ -57,6 +58,16 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 // ------------------------------------------------------------------------------------------
 #pragma mark - Getters Overwriting
 // ------------------------------------------------------------------------------------------
+- (id<StoreKISSReachabilityProtocol>)reachability
+{
+    if (_reachability == nil)
+    {
+        _reachability = [[StoreKISSReachability alloc] init];
+    }
+    
+    return _reachability;
+}
+
 - (NSNotificationCenter *)notificationCenter
 {
     if (_notificationCenter == nil)
@@ -92,6 +103,16 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 	if ([self canMakePayments] == NO)
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"In-App Purchasing is disabled."};
+		self.error = [NSError errorWithDomain:StoreKISSErrorDomain
+                                         code:0
+                                     userInfo:userInfo];
+		[self finish];
+		return;
+	}
+    
+    if ([self.reachability hasReachableInternetConnection] == NO)
+    {
+        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"No internet connection.", @"")};
 		self.error = [NSError errorWithDomain:StoreKISSErrorDomain
                                          code:0
                                      userInfo:userInfo];
