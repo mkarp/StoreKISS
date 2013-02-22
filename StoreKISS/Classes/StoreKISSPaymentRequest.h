@@ -19,6 +19,11 @@ typedef enum {
 	StoreKISSPaymentRequestStatusFinished
 } StoreKISSPaymentRequestStatus;
 
+typedef enum {
+    StoreKISSNotificationPaymentRequestSuccessResultPurchased = 0,
+    StoreKISSNotificationPaymentRequestSuccessResultRestored
+} StoreKISSNotificationPaymentRequestSuccessResult;
+
 typedef void (^StoreKISSPaymentRequestSuccessBlock)(StoreKISSPaymentRequest *request);
 typedef void (^StoreKISSPaymentRequestFailureBlock)(NSError *error);
 
@@ -29,8 +34,9 @@ extern NSString * const StoreKISSNotificationPaymentRequestSuccess;
 extern NSString * const StoreKISSNotificationPaymentRequestFailure;
 
 
-#define StoreKISSNotificationPaymentRequestSuccessTransactionKey @"StoreKISSNotificationPaymentRequestSuccessTransactionKey"
-#define StoreKISSNotificationPaymentRequestFailureErrorKey @"StoreKISSNotificationPaymentRequestFailureErrorKey"
+#define StoreKISSNotificationPaymentRequestTransactionKey @"StoreKISSNotificationPaymentRequestTransactionKey"
+#define StoreKISSNotificationPaymentRequestSuccessResultKey @"StoreKISSNotificationPaymentRequestSuccessResultKey"
+#define StoreKISSNotificationPaymentRequestErrorKey @"StoreKISSNotificationPaymentRequestErrorKey"
 
 
 /** Class for making In-App Purchase payments.
@@ -52,8 +58,13 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailure;
  - `StoreKISSNotificationPaymentRequestStarted` &mdash; request started;
  - `StoreKISSNotificationPaymentRequestPurchasing` &mdash; `SKPaymentTransactionStatePurchasing` status 
     was received;
- - `StoreKISSNotificationPaymentRequestSuccess` &mdash; request finished with success, the `SKPaymentTransaction` 
-    object can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestSuccessTransactionKey` key;
+ - `StoreKISSNotificationPaymentRequestSuccess` &mdash; request finished with success, `userInfo` of the
+    notification will contain:
+    
+   - `StoreKISSNotificationPaymentRequestSuccessTransactionKey` &mdash; `SKPaymentTransaction` object;
+   - `StoreKISSNotificationPaymentRequestSuccessResultKey` &mdash; `NSNumber` with purchased or restored status,
+     please see `StoreKISSNotificationPaymentRequestSuccessResult` in the header file for more information;
+ 
  - `StoreKISSNotificationPaymentRequestFailure` &mdash; request finished with failure, the `NSError` object 
     can be accessed in `userInfo` dictionary by `StoreKISSNotificationPaymentRequestFailureErrorKey` key. */
 @interface StoreKISSPaymentRequest : NSObject<SKPaymentTransactionObserver>
@@ -63,18 +74,20 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailure;
 ///-----------------
 
 /** Status of the request. */
-@property (assign, nonatomic) StoreKISSPaymentRequestStatus status;
+@property (assign, nonatomic, readonly) StoreKISSPaymentRequestStatus status;
 
 /** Payment which will be sent to Apple.
  Will be nil before the request is started. */
 @property (strong, nonatomic, readonly) SKPayment *skPayment;
 
-/** Received transaction.
- Will be nil until request is finished. */
+/** All received transactions. Multiple transaction can be in the result of restoring payments. */
+@property (strong, nonatomic, readonly) NSArray *skTransactions;
+
+/** Received transaction for current SKProduct. */
 @property (strong, nonatomic, readonly) SKPaymentTransaction *skTransaction;
 
-/** Error if failed. */
-@property (strong, nonatomic) NSError *error;
+/** Error if a single transaction failed. */
+@property (strong, nonatomic, readonly) NSError *error;
 
 ///-------------------
 /// @name Dependencies
@@ -83,10 +96,6 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailure;
 /** Reachability dependency. Assign one of yours if needed. See `StoreKISSReachabilityProtocol` documentation.
  `StoreKISSReachability` instance will be used by default. */
 @property (strong, nonatomic) id<StoreKISSReachabilityProtocol> reachability;
-
-/** Notification center dependency. Assign one of yours if needed. `[NSNotificationCenter defaultCenter]`
- will be used by default. */
-@property (weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 ///-----------------------------------
 /// @name Checking payment possibility
@@ -114,5 +123,19 @@ extern NSString * const StoreKISSNotificationPaymentRequestFailure;
  
  @param skProduct SKProduct you've received from StoreKit's API. */
 - (void)makePaymentWithSKProduct:(SKProduct *)skProduct;
+
+///-------------------------
+/// @name Restoring payments
+///-------------------------
+
+/** Restore your already completed payments.
+ 
+ @param success Block that will be called after successful ending of the operation.
+ @param failure Block that will be called in case of error. */
+- (void)restorePaymentsWithSuccess:(StoreKISSPaymentRequestSuccessBlock)success
+                           failure:(StoreKISSPaymentRequestFailureBlock)failure;
+
+/** Restore payments. A shortcut to use with notifications. */
+- (void)restorePayments;
 
 @end
