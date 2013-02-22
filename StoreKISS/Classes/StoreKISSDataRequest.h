@@ -28,8 +28,8 @@ extern NSString * const StoreKISSNotificationDataRequestSuccess;
 extern NSString * const StoreKISSNotificationDataRequestFailure;
 
 
-#define StoreKISSNotificationDataRequestSuccessResponseKey @"StoreKISSNotificationDataRequestSuccessResponseKey"
-#define StoreKISSNotificationDataRequestFailureErrorKey @"StoreKISSNotificationDataRequestFailureErrorKey"
+#define StoreKISSNotificationDataRequestResponseKey @"StoreKISSNotificationDataRequestResponseKey"
+#define StoreKISSNotificationDataRequestErrorKey @"StoreKISSNotificationDataRequestErrorKey"
 
 
 /** Class for fetching payment data from iTunesConnect using Product IDs.
@@ -62,7 +62,7 @@ extern NSString * const StoreKISSNotificationDataRequestFailure;
 ///-----------------
 
 /** Status of the request. */
-@property (assign, nonatomic) StoreKISSDataRequestStatus status;
+@property (assign, nonatomic, readonly) StoreKISSDataRequestStatus status;
 
 /** StoreKit's SKProductsRequest object.
  Will be nil before the start of request. */
@@ -76,7 +76,7 @@ extern NSString * const StoreKISSNotificationDataRequestFailure;
 @property (strong, nonatomic, readonly) NSSet *productIds;
 
 /** Error if failed. */
-@property (strong, nonatomic) NSError *error;
+@property (strong, nonatomic, readonly) NSError *error;
 
 ///-------------------
 /// @name Dependencies
@@ -85,10 +85,6 @@ extern NSString * const StoreKISSNotificationDataRequestFailure;
 /** Reachability dependency. Assign one of yours if needed. See `StoreKISSReachabilityProtocol` documentation. 
  `StoreKISSReachability` instance will be used by default. */
 @property (strong, nonatomic) id<StoreKISSReachabilityProtocol> reachability;
-
-/** Notification center dependency. Assign one of yours if needed. `[NSNotificationCenter defaultCenter]` 
- will be used by default. */
-@property (weak, nonatomic) NSNotificationCenter *notificationCenter;
 
 ///----------------------
 /// @name Requesting data

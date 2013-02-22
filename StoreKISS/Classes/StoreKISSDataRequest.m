@@ -11,11 +11,11 @@
 
 
 NSString * const StoreKISSNotificationDataRequestStarted =
-@"com.redigion.storekiss.notification.dataRequest.started";
+    @"com.redigion.storekiss.notification.dataRequest.started";
 NSString * const StoreKISSNotificationDataRequestSuccess =
-@"com.redigion.storekiss.notification.dataRequest.success";
+    @"com.redigion.storekiss.notification.dataRequest.success";
 NSString * const StoreKISSNotificationDataRequestFailure =
-@"com.redigion.storekiss.notification.dataRequest.failure";
+    @"com.redigion.storekiss.notification.dataRequest.failure";
 
 
 @interface StoreKISSDataRequest ()
@@ -31,17 +31,18 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 @implementation StoreKISSDataRequest
 
 
+@synthesize status = _status;
 @synthesize skRequest = _skRequest;
 @synthesize skResponse = _skResponse;
 @synthesize reachability = _reachability;
-@synthesize notificationCenter = _notificationCenter;
+@synthesize error = _error;
 
 
 - (id)init
 {
 	if ((self = [super init]))
     {
-		self.status = StoreKISSDataRequestStatusNew;
+		_status = StoreKISSDataRequestStatusNew;
 	}
 	return self;
 }
@@ -54,21 +55,10 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 {
     if (_reachability == nil)
     {
-        _reachability = [[StoreKISSReachability alloc] init];
+        self.reachability = [[StoreKISSReachability alloc] init];
     }
     
     return _reachability;
-}
-
-
-- (NSNotificationCenter *)notificationCenter
-{
-    if (_notificationCenter == nil)
-    {
-        _notificationCenter = [NSNotificationCenter defaultCenter];
-    }
-    
-    return _notificationCenter;
 }
 
 
@@ -76,31 +66,31 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 #pragma mark - Requesting Data
 // ------------------------------------------------------------------------------------------
 - (void)requestDataForItemWithProductId:(NSString *)productId
-								success:(StoreKISSDataRequestSuccessBlock)successBlock
-								failure:(StoreKISSDataRequestFailureBlock)failureBlock
+								success:(StoreKISSDataRequestSuccessBlock)success
+								failure:(StoreKISSDataRequestFailureBlock)failure
 {
 	[self requestDataForItemsWithProductIds:[NSSet setWithObject:productId]
-                                    success:successBlock
-                                    failure:failureBlock];
+                                    success:success
+                                    failure:failure];
 }
 
 
 - (void)requestDataForItemsWithProductIds:(NSSet *)productIds
-								  success:(StoreKISSDataRequestSuccessBlock)successBlock
-								  failure:(StoreKISSDataRequestFailureBlock)failureBlock
+								  success:(StoreKISSDataRequestSuccessBlock)success
+								  failure:(StoreKISSDataRequestFailureBlock)failure
 {
 	if ([self isExecuting])
     {
 		return;
 	}
 	
-	self.success = successBlock;
-	self.failure = failureBlock;
+	self.success = success;
+	self.failure = failure;
 	
 	if ([self.reachability hasReachableInternetConnection] == NO)
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"No internet connection.", @"")};
-		self.error = [NSError errorWithDomain:StoreKISSErrorDomain
+		_error = [NSError errorWithDomain:StoreKISSErrorDomain
                                          code:0
                                      userInfo:userInfo];
 		[self finish];
@@ -140,36 +130,36 @@ NSString * const StoreKISSNotificationDataRequestFailure =
     
 	[self.skRequest start];
     
-	self.status = StoreKISSDataRequestStatusStarted;
-	[self.notificationCenter postNotificationName:StoreKISSNotificationDataRequestStarted
-                                           object:self];
+	_status = StoreKISSDataRequestStatusStarted;
+	[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationDataRequestStarted
+                                                        object:self];
 }
 
 
 - (void)finish
 {
-	self.status = StoreKISSDataRequestStatusFinished;
+	_status = StoreKISSDataRequestStatusFinished;
 	
-	if (self.skResponse && self.error == nil)
+	if (self.error != nil)
     {
-        NSDictionary *userInfo = @{StoreKISSNotificationDataRequestSuccessResponseKey: self.skResponse};
-		[self.notificationCenter postNotificationName:StoreKISSNotificationDataRequestSuccess
-                                               object:self
-                                             userInfo:userInfo];
-		if (self.success)
+        NSDictionary *userInfo = @{StoreKISSNotificationDataRequestErrorKey: self.error};
+		[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationDataRequestFailure
+                                                            object:self
+                                                          userInfo:userInfo];
+		if (self.failure)
         {
-			self.success(self);
+			self.failure(self.error);
 		}
 	}
     else
     {
-        NSDictionary *userInfo = @{StoreKISSNotificationDataRequestFailureErrorKey: self.error};
-		[self.notificationCenter postNotificationName:StoreKISSNotificationDataRequestFailure
-                                               object:self
-                                             userInfo:userInfo];
-		if (self.failure)
+        NSDictionary *userInfo = @{StoreKISSNotificationDataRequestResponseKey: self.skResponse};
+		[[NSNotificationCenter defaultCenter] postNotificationName:StoreKISSNotificationDataRequestSuccess
+                                                            object:self
+                                                          userInfo:userInfo];
+		if (self.success)
         {
-			self.failure(self.error);
+			self.success(self);
 		}
 	}
     
