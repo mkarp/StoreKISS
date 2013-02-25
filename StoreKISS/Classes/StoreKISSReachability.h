@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Redigion. All rights reserved.
 //
 
+
 #import "StoreKISSShared.h"
-#import "StoreKISSReachabilityProtocol.h"
 
 
 /** A default reachability implementation if you don't need a custom one. It is a simple wrapper for included

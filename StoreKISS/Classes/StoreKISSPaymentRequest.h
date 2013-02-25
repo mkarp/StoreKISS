@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Redigion. All rights reserved.
 //
 
+
 #import "StoreKISSShared.h"
-#import "StoreKISSReachabilityProtocol.h"
 
 
 @class StoreKISSPaymentRequest;
