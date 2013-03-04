@@ -52,6 +52,12 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 }
 
 
+- (void)dealloc
+{
+    [[SKPaymentQueue defaultQueue] removeTransactionObserver:self];
+}
+
+
 // ------------------------------------------------------------------------------------------
 #pragma mark - Getters Overwriting
 // ------------------------------------------------------------------------------------------
@@ -339,7 +345,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 
 - (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray *)transactions 
 {
-	NSLog(@"removedTransactions");
+	DLog(@"removedTransactions");
 }
 
 

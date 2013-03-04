@@ -49,6 +49,15 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 }
 
 
+- (void)dealloc
+{
+    if (self.skRequest != nil)
+    {
+        self.skRequest.delegate = nil;
+    }
+}
+
+
 // ------------------------------------------------------------------------------------------
 #pragma mark - Getters Overwriting
 // ------------------------------------------------------------------------------------------
@@ -164,6 +173,7 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 		}
 	}
     
+    self.skRequest.delegate = nil;
     self.strongSelf = nil;
 }
 
