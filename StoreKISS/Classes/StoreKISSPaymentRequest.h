@@ -32,6 +32,7 @@ extern NSString * const StoreKISSNotificationPaymentRequestStarted;
 extern NSString * const StoreKISSNotificationPaymentRequestPurchasing;
 extern NSString * const StoreKISSNotificationPaymentRequestSuccess;
 extern NSString * const StoreKISSNotificationPaymentRequestFailure;
+extern NSString * const StoreKISSNotificationPaymentRequestTransactionRemoved;
 
 
 #define StoreKISSNotificationPaymentRequestTransactionKey @"StoreKISSNotificationPaymentRequestTransactionKey"

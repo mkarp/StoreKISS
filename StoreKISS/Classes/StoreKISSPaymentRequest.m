@@ -19,6 +19,8 @@ NSString * const StoreKISSNotificationPaymentRequestPurchasing =
     @"com.redigion.storekiss.notification.paymentRequest.purchasing";
 NSString * const StoreKISSNotificationPaymentRequestFailure =
     @"com.redigion.storekiss.notification.PaymentRequest.failure";
+NSString * const StoreKISSNotificationPaymentRequestTransactionRemoved =
+    @"com.redigion.storekiss.notification.PaymentRequest.transaction_removed";
 
 
 @interface StoreKISSPaymentRequest ()
@@ -87,7 +89,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"In-App Purchasing is disabled."};
 		_error = [NSError errorWithDomain:StoreKISSErrorDomain
-                                     code:0
+                                     code:StoreKISSErrorIAPDisabled
                                  userInfo:userInfo];
 	}
 }
@@ -99,7 +101,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"No internet connection.", @"")};
 		_error = [NSError errorWithDomain:StoreKISSErrorDomain
-                                     code:0
+                                     code:StoreKISSErrorNoInternetConnection
                                  userInfo:userInfo];
 	}
 }
@@ -111,7 +113,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"SKProduct should not be nil."};
 		_error = [NSError errorWithDomain:StoreKISSErrorDomain
-                                     code:0
+                                     code:StoreKISSErrorInvalidSKProduct
                                  userInfo:userInfo];
 	}
 }
@@ -246,6 +248,12 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 }
 
 
+- (BOOL)isFinished
+{
+    return self.status == StoreKISSPaymentRequestStatusFinished;
+}
+
+
 // ------------------------------------------------------------------------------------------
 #pragma mark - SKPaymentTransactionObserver
 // ------------------------------------------------------------------------------------------
@@ -275,6 +283,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
                     StoreKISSNotificationPaymentRequestPurchasing
                                                                     object:self
                                                                   userInfo:userInfo];
+                // Don't call [self finish] until at least one transaction is still being processed
                 allTransactionsOnTheQueueAreFinished = NO;
                 break;
             }
@@ -317,10 +326,11 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
                 }
                 else
                 {
-                    NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"Multiple transactions processed, "
-                                                "please see transactions array property for errors."};
+                    NSDictionary *userInfo =
+                        @{NSLocalizedDescriptionKey: @"One of several transactions failed, "
+                                                      "please see transactions array property for errors."};
                     _error = [NSError errorWithDomain:StoreKISSErrorDomain
-                                                 code:0
+                                                 code:StoreKISSErrorTransactionFailed
                                              userInfo:userInfo];
                 }
                 
@@ -336,7 +346,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
         }
     }
     
-    if (allTransactionsOnTheQueueAreFinished)
+    if (allTransactionsOnTheQueueAreFinished && ! [self isFinished])
     {
         [self finish];
     }
@@ -345,13 +355,20 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 
 - (void)paymentQueue:(SKPaymentQueue *)queue removedTransactions:(NSArray *)transactions 
 {
-	DLog(@"removedTransactions");
+    for (SKPaymentTransaction *skTransaction in transactions)
+    {
+        NSDictionary *userInfo = @{StoreKISSNotificationPaymentRequestTransactionKey: skTransaction};
+        [[NSNotificationCenter defaultCenter] postNotificationName:
+             StoreKISSNotificationPaymentRequestTransactionRemoved
+                                                            object:self
+                                                          userInfo:userInfo];
+    }
 }
 
 
 - (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
 {
-    if (self.status != StoreKISSPaymentRequestStatusFinished)
+    if ( ! [self isFinished])
     {
         _error = error;
         [self finish];
@@ -361,7 +378,7 @@ NSString * const StoreKISSNotificationPaymentRequestFailure =
 
 - (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
 {
-    if (self.status != StoreKISSPaymentRequestStatusFinished)
+    if ( ! [self isFinished])
     {
         [self finish];
     }

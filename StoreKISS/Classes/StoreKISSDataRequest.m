@@ -101,8 +101,8 @@ NSString * const StoreKISSNotificationDataRequestFailure =
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: NSLocalizedString(@"No internet connection.", @"")};
 		_error = [NSError errorWithDomain:StoreKISSErrorDomain
-                                         code:0
-                                     userInfo:userInfo];
+                                     code:StoreKISSErrorNoInternetConnection
+                                 userInfo:userInfo];
 		[self finish];
 		return;
 	}

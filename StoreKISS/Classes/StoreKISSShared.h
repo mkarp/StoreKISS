@@ -13,3 +13,11 @@
 
 
 #define StoreKISSErrorDomain @"com.redigion.storekiss.error"
+
+typedef NS_ENUM(NSInteger, StoreKISSError)
+{
+    StoreKISSErrorIAPDisabled = 0,
+    StoreKISSErrorNoInternetConnection,
+    StoreKISSErrorInvalidSKProduct,
+    StoreKISSErrorTransactionFailed
+};
