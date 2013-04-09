@@ -8,7 +8,6 @@
 
 
 #import "StoreKISSPaymentRequest.h"
-#import "StoreKISSReachability.h"
 
 
 NSString * const StoreKISSNotificationPaymentRequestStarted =
@@ -65,11 +64,7 @@ NSString * const StoreKISSNotificationPaymentRequestTransactionRemoved =
 // ------------------------------------------------------------------------------------------
 - (id<StoreKISSReachabilityProtocol>)reachability
 {
-    if (_reachability == nil)
-    {
-        self.reachability = [[StoreKISSReachability alloc] init];
-    }
-    
+    ZAssert(_reachability != nil, @"Reachability wrapper must be provided!");
     return _reachability;
 }
 

@@ -8,7 +8,6 @@
 
 
 #import "StoreKISSDataRequest.h"
-#import "StoreKISSReachability.h"
 
 
 NSString * const StoreKISSNotificationDataRequestStarted =
@@ -63,11 +62,7 @@ NSString * const StoreKISSNotificationDataRequestFailure =
 // ------------------------------------------------------------------------------------------
 - (id<StoreKISSReachabilityProtocol>)reachability
 {
-    if (_reachability == nil)
-    {
-        self.reachability = [[StoreKISSReachability alloc] init];
-    }
-    
+    ZAssert(_reachability != nil, @"Reachability wrapper must be provided!");   
     return _reachability;
 }
 
