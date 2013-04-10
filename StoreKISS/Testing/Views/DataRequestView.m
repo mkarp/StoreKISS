@@ -14,16 +14,11 @@
 
 @implementation DataRequestView
 
-@synthesize launchSingleButton,
-			launchBulkButton,
-			statusLabel,
-			notificationStatusLabel,
-			logTextView;
-
 - (id)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+    {
 		self.launchSingleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 		self.launchSingleButton.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 		[self.launchSingleButton

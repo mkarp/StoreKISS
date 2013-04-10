@@ -38,7 +38,8 @@
 {
 	static NSString *cellIdentifier = @"CellIdentifier";
 	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
+    if (cell == nil)
+    {
         cell = [[UITableViewCell alloc]
 				initWithStyle:UITableViewCellStyleDefault
 				reuseIdentifier:cellIdentifier];

@@ -6,10 +6,18 @@
 //  Copyright (c) 2012 Redigion. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
+#import "StoreKISSReachabilityProtocol.h"
 
-/**
- Indicates an error occured in StoreKISS.
- */
-extern NSString * const StoreKISSErrorDomain;
+
+#define StoreKISSErrorDomain @"com.redigion.storekiss.error"
+
+typedef NS_ENUM(NSInteger, StoreKISSError)
+{
+    StoreKISSErrorIAPDisabled = 0,
+    StoreKISSErrorNoInternetConnection,
+    StoreKISSErrorInvalidSKProduct,
+    StoreKISSErrorTransactionFailed
+};

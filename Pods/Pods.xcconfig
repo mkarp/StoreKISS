@@ -1,4 +1,0 @@
-ALWAYS_SEARCH_USER_PATHS = YES
-OTHER_LDFLAGS = -ObjC -framework SystemConfiguration
-PODS_ROOT = ${SRCROOT}/Pods
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/Reachability"

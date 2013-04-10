@@ -31,11 +31,6 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 
 @implementation PaymentRequestViewController
 
-@synthesize paymentRequestView,
-			skProduct,
-			dataRequest,
-			paymentRequest;
-
 - (void)dealloc
 {
 	[[NSNotificationCenter defaultCenter]
@@ -57,7 +52,8 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 - (id)init
 {
 	self = [super init];
-	if (self) {
+	if (self)
+    {
 		self.dataRequest = [[StoreKISSDataRequest alloc] init];
 		self.paymentRequest = [[StoreKISSPaymentRequest alloc] init];
 		
@@ -66,7 +62,7 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 		 selector:@selector(didReceivePaymentRequestNotification:)
 		 name:StoreKISSNotificationPaymentRequestStarted
 		 object:nil];
-		 
+        
 		[[NSNotificationCenter defaultCenter]
 		 addObserver:self
 		 selector:@selector(didReceivePaymentRequestNotification:)
@@ -125,14 +121,15 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 
 - (void)launchButtonOnTouchUpInside:(id)sender
 {
-	void (^failure)(NSError *) = ^(NSError *error) {
+	void (^failure)(NSError *) = ^(NSError *error)
+    {
 		self.paymentRequestView.statusLabel.text = paymentRequestStatusFailure;
 		self.paymentRequestView.statusLabel.textColor = [UIColor redColor];
 		
 		[self log:@"Finished with error"];
-		[self log:[NSString stringWithFormat:@"%@", error.localizedDescription]]; 
+		[self log:[NSString stringWithFormat:@"%@", error.localizedDescription]];
 	};
-
+    
 	self.paymentRequestView.statusLabel.text = paymentRequestStatusExecuting;
 	self.paymentRequestView.statusLabel.textColor = [UIColor blackColor];
 	
@@ -143,10 +140,12 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 	
 	[self.dataRequest
 	 requestDataForItemWithProductId:paymentRequestNonConsumableProductId1
-	 success:^(StoreKISSDataRequest *currentRequest) {
-		 if (currentRequest.skResponse.products.count != 1) {
+	 success:^(StoreKISSDataRequest *currentRequest)
+     {
+		 if (currentRequest.skResponse.products.count != 1)
+         {
 			 NSError *error = [NSError
-							   errorWithDomain:nil
+							   errorWithDomain:@"com.redigion.storekiss.error.test"
 							   code:0
 							   userInfo:[NSDictionary
 										 dictionaryWithObject:@"No products received."
@@ -154,14 +153,15 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 			 failure(error);
 			 return;
 		 }
-	 
+         
 		 self.skProduct = [currentRequest.skResponse.products objectAtIndex:0];
 		 [self log:[NSString stringWithFormat:@"Received data for %@...", self.skProduct.productIdentifier]];
 		 [self log:[NSString stringWithFormat:@"Trying to buy %@...", self.skProduct.productIdentifier]];
-	 
+         
 		 [self.paymentRequest
 		  makePaymentWithSKProduct:self.skProduct
-		  success:^(StoreKISSPaymentRequest *request) {
+		  success:^(StoreKISSPaymentRequest *request)
+          {
 			  NSString *result = [NSString stringWithFormat:@"%@ %@",
 								  paymentRequestStatusSuccess,
 								  paymentRequestNonConsumableProductId1];
@@ -177,9 +177,11 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 - (void)didReceivePaymentRequestNotification:(NSNotification *)notification
 {
 	self.paymentRequestView.notificationStatusLabel.text = NSLocalizedString(notification.name, @"");
-	if ([notification.name isEqualToString:StoreKISSNotificationPaymentRequestSuccess]) {
+	if ([notification.name isEqualToString:StoreKISSNotificationPaymentRequestSuccess])
+    {
 		self.paymentRequestView.notificationStatusLabel.textColor = [UIColor greenColor];
-	} else if ([notification.name isEqualToString:StoreKISSNotificationPaymentRequestFailure]) {
+	} else if ([notification.name isEqualToString:StoreKISSNotificationPaymentRequestFailure])
+    {
 		self.paymentRequestView.notificationStatusLabel.textColor = [UIColor redColor];
 	} else {
 		self.paymentRequestView.notificationStatusLabel.textColor = [UIColor blackColor];
@@ -190,7 +192,7 @@ NSString * const paymentRequestNotificationStatusFailure = @"Failure";
 
 - (void)log:(NSString *)message
 {
-	self.paymentRequestView.logTextView.text = [self.paymentRequestView.logTextView.text 
+	self.paymentRequestView.logTextView.text = [self.paymentRequestView.logTextView.text
 												stringByAppendingFormat:@"%@\r\n\r\n", message];
 }
 
